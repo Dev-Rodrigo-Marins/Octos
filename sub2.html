@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css"> <!--link o arquivo css-->
+  <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"> <!-- fundo fumaça-->
+  <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
+  <a href="cad1.php"><img class="submenu2" id="cad" src="imagens/do-utilizador.png" width="80" height="80" style="border:solid black"></a>
+ 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
+  <script src="sub1.js"></script>
+
+  <!-- função para alternar o modo do site -->
+  <script>
+    window.onload = function () {
+      var modoEscuro = localStorage.getItem("modoEscuro");
+      if (modoEscuro === "true") {
+        modoescuro();
+      } else {
+        modoclaro();
+      }
+    };
+  </script>
+
+ 
+</head>
+
+<body>
+<!-- botao para alterar o modo de exibição do site -->
+  <div class="submenu1">
+    <div> <button id="modoescuro" onclick="alternarModo()">Modo Escuro</button></div>
+    <fieldset id="bemvindo">
+      <h1> Bem vindo ao <span id="octos"> OCTOS </span> <br>
+        Nossos braços alcançam seus objetivos!</h1>
+    </fieldset>
+  </div>
+<!-- submenu de navegaççao entre as paginas do site -->
+  <fieldset class="field2" id="field2">
+    <table id="tab">
+      <td class="td1" id="td1" onmouseenter="onMouseEnter('td1')" onmouseleave="onMouseLeave('td1')"><a
+          href="sub1.html">Calculadora Renda Fixa </a></td>
+      <td class="td2" id="td1" onmouseenter="onMouseEnter('td2')" onmouseleave="onMouseLeave('td2')"><a
+          href="sub2.html">Parcelar</a></td>
+      <td class="td3" id="td1" onmouseenter="onMouseEnter('td3')" onmouseleave="onMouseLeave('td3')"><a
+          href="sub3.html">Avista</a></td>
+      <td class="td4" id="td1" onmouseenter="onMouseEnter('td4')" onmouseleave="onMouseLeave('td4')"><a
+          href="sub4.html">Projeto Tamar </a></td>
+      <td class="td5" id="td1" onmouseenter="onMouseEnter('td5')" onmouseleave="onMouseLeave('td5')"><a
+          href="sub5.html">Fundos Imobiliários </a><img class="cadeado" id="cadeado" src="imagens/cadeado.png"></td>
+      <td class="td6" id="td1" onmouseenter="onMouseEnter('td6')" onmouseleave="onMouseLeave('td6')"><a
+          href="sub6.html">Area exclusiva </a><img class="cadeado" id="cadeado1" src="imagens/cadeado.png"></td>
+    </table>
+  </fieldset>
+
+<!-- apresentação da ideia da pagina -->
+  <h4>Parcelar uma compra pode ser uma opção viável em certas situações, mas é importante agir com cautela para evitar
+    problemas financeiros no futuro.
+    Antes de decidir parcelar, leve em consideração o valor total da compra, seu orçamento mensal e sua capacidade de
+    pagamento.</h4>
+  <br>
+
+  <!-- inicio do container de video -->
+  <div class="container">
+
+    <div class="video-box">
+      <iframe id="dintemp" frameborder="2" width="600" height="350" src="https://www.youtube.com/embed/hLBQzuDGsS0"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe></iframe>
+      <p style="text-align: center;"> *Retirado do canal <a class="l1"
+          href="https://www.youtube.com/@AcordoCertoOficial">Acordo Certo</a> no youtube</p>
+    </div>
+<!-- espaço para aquela propaganda amiga -->
+    <div class="gif_nu1">
+      <FIeldset>
+        <img id="gif_nu_ifr" src="imagens/nu3.PNG" frameborder="1"></img>
+      </FIeldset>
+    </div>
+<!-- inicio dos sub-containers -->
+    <div class="videos">
+      <fieldset>
+        <div id="video-container">
+          <iframe src="https://www.youtube.com/embed/Ul6PUdqndLM" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe> <br>
+          <p class="video-description">Lucre no parcelado!</p>
+        </div>
+
+        <div id="video-container">
+          <iframe src="https://www.youtube.com/embed/tD_lGsXWJgg" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe> <br>
+          <p class="video-description">Cartão de Credito, como usar!</p>
+        </div>
+
+        <div id="video-container">
+          <iframe src="https://www.youtube.com/embed/tXibl7cwVHk" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe> <br>
+          <p class="video-description">Como Parcelar ? </p>
+        </div>
+
+    </div>
+    </fieldset>
+<!-- espaço para aquela propaganda amiga -->
+    <div class="gif_nu">
+      <FIeldset>
+        <img id="gif_nu_ifr" src="imagens/nu1.PNG" frameborder="1"></img>
+      </FIeldset>
+    </div>
+    <!-- aquela mensagem de fim da ideia para reforçar o conteudo. -->
+  </div>
+  <h4>Lembre que o desconto para pagamento avista tem que ser maior que o retorno de manter o dinheiro investido no CDI.
+  </h4>
+
+
+<!-- rodape -->
+</body>
+<footer id="rodape">
+  <fieldset id="f1">
+    <legend>
+      <p id="trodape"> Para uma consultoria mais detalhada, entre em contato por nossos canais digitais.</p>
+    </legend>
+    <table id="roda">
+      <td style="vertical-align: middle; text-align: center;">
+        <div class="social-media">
+          <div class="smd">
+            <a href="https://wa.me/5551986102344?" text="Ola,%20Bem%20Vindo%20a%20Octos!" target="_blank"><img id="sm1"
+                src="imagens/whatsapp.png" width="80" height="60"></a>
+            <a href="https://t.me/+aIB0CcdetzQyOGVh" target="_blank"><img id="sm2" src="imagens/telegram.png" width="80"
+                height="60"></a>
+            <a href="https://discord.gg/H8tQSkTc" target="_blank"><img id="sm3" src="imagens/discordia.png" width="80"
+                height="60"><br><br></a>
+          </div>
+          <a href="https://www.youtube.com/@rodrigomarins9970" target="_blank"><img id="btinscrever"
+              src="imagens/bt inscrever.png" width="270" height="100"></a>
+          <img class="fundo" id="anuncio" src="imagens/anunciof2.png" width="750" height="160">
+          <img id="loc" src="imagens/horario2.png" width="220" height="110">
+          <a href="https://goo.gl/maps/TK1t8Ne9votr7Vgd6" target="_blank"><img id="loc" src="imagens/localizacao.png" width="80"
+              height="80"></a>
+        </div>
+      </td>
+
+    </table>
+
+    <p id="rod">
+
+      <br>E-mail: <a class="l1" href="mailto:octos@octos.com.br"> octos@octos.com.br </a>
+      <br>Rua Comendador Neto 2354
+      <br> Anchieta, São Paulo - Brasil.
+      <br>Cep 09834-000
+    </p>
+
+  </fieldset>
+</footer>
+
+</html>
