@@ -10,6 +10,10 @@ function db_insert_cadastro($email, $senha, $nome,$faixa_salarial) {
 	$nome = $_REQUEST['nome'];
 	$faixa_salarial = $_REQUEST['faixa_salarial'];
 	
+    //Insere a criptografia da senha MD5
+    $senha = md5($senha);
+
+
     // Prepara a consulta SQL com placeholders
     $sql = "INSERT INTO tb_usuariocadastro (ds_email, ds_senha, nm_usuario, id_salario)
             VALUES (:email, :senha, :nome,:faixa_salarial)";

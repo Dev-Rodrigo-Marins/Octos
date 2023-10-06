@@ -7,13 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css"> <!--link o arquivo css-->
-  <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"/> <!-- fundo fumaça-->
+  <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"> <!-- fundo fumaça-->
   <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
   <a href="cad1.php"><img class="submenu2" id="cad" src="imagens/do-utilizador.png" width="80" height="80" style="border:solid black"></a>
-
+ 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
-  <script src="sub1.js"></script> <!-- chama o js do primeiro semestre-->
-  <!--<script src="validaform.js"></script>-->
+  <script src="sub1.js"></script>
 
   <!-- função para alternar o modo do site -->
   <script>
@@ -60,72 +59,23 @@
 <!-- apresentação da ideia da pagina -->
 
   <div class="titulo">
-    <h4>Area de cadastro Octos!
-      <br><br> Por gentileza preencha o formulario abaixo para ter acesso a area premium do nosso site!!!
-    </h4>
+    <h4><?php
+    session_start();
+        echo"Ola ".$_SESSION['email'];
+    ?> <br >  Bem Vindo ao Painel do Investidor!</h4>
+
+
+    <br><br>
+    <fieldset class="janela_modal" id="janela_modal" >
+    <span class="modal1">
+    <a href="quest.php">* clique aqui para fazer sua analise de risco para investimentos !</a> <br><br>
+    <a href="cursos.php">* clique aqui para conhecer os nossos cursos de investimentos !</a> <br><br>
+    <a href="rec_inv.php">* clique aqui para ver a recomendacões de investimento para o seu perfil( necessario ter perfil de risco definido!) </a> <br><br>
+    </span>
+    </fieldset>
+
   </div>
- <!--inicio dos formularios... -->
 
- <!--
- <script>
-  function validaform(){
-  alert("teste");
-  window.location.href = "autenticar_login.php";
-  return true;
-  }
-  document.getElementById("Entrar").addEventListener("click", validaform);
-</script> 
-
- <script>
-  function redirecionarParaLogin() {
-    window.location.href = "login.php";
-  }
-</script>
--->
-
-
-<form action="autenticar_login.php  " method="post" name="meu_form">
-
-
-<fieldset class="janela_modal" id="janela_modal" >
-  <span class="modal1">
-
-  <button class="login" id="login"><a href="login.php">Login / Entrar</a></button>
-  
-  <br><br>
-
-  <legend>Area de Acesso!</legend>
-  <br><br>
-    <label for="email">E-mail / Usuario</label><br>
-    <input type="email" name="email" id="email"><br><br>
-
-    <label for="senha">Senha</label><br>
-    <input type="password" name="senha" id="senha"> <br><br>
-
-</select>
-</div>
-<br><br>
-
-<button class="login" id="enviarlog" name="Entrar" type="submit">Entrar</button>
-<br><br>
- 
-  <br><br>
-  </span>
-  </fieldset>
-
-</form>
-
-
-
-</div>
-
-</div>
-
-</body>
-
-<br><br>
-
-<!-- rodape -->
 
 <footer id="rodape">
   <fieldset id="f1">
@@ -146,7 +96,7 @@
           <a href="https://www.youtube.com/@rodrigomarins9970" target="_blank"><img id="btinscrever"
               src="imagens/bt inscrever.png" width="270" height="100"></a>
           <img class="fundo" id="anuncio" src="imagens/anunciof2.png" width="750" height="160">
-          <img id="loc" src="horario2.png" width="220" height="110">
+          <img id="loc" src="imagens/horario2.png" width="220" height="110">
           <a href="https://goo.gl/maps/TK1t8Ne9votr7Vgd6" target="_blank"><img id="loc" src="imagens/localizacao.png" width="80"
               height="80"></a>
         </div>
