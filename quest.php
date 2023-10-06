@@ -63,42 +63,18 @@
     </h4>
   </div>
  <!--inicio dos formularios... -->
-<br><br>
+ <br><br>
 
 <div class="janela_modal" id="janela_modal">
 <div class="modal">
-<form action="" method="post">
+<form action="" method="get">
 
-<!--<label for="nome">Nome Completo:</label><br>
-<input type="text" name="nome" id="nome"> <br><br>
-
-<label for="endereco">Endereco</label> <label for="Numero_end"></label><br>
-<input type="text" name="endereco" id="endereco"> <br><br>
-
-<label for="email">E-mail</label><br>
-<input type="email" name="email" id="email"><br><br>
-
-<label for="login">Login / Usuario</label><br>
-<input type="text" name="login" id="login"> <br><br>
-
-<label for="senha">Senha</label><br>
-<input type="password" name="senha" id="senha"> <br><br>
-
-<label for="csenha">Confirmação Senha</label><br>
-<input type="text" name="csenha" id="csenha"> <br><br>
-
-
-<input type="submit" value="Enviar" > -->
 
 <fieldset>
-  <legend>Formulario de  definição de perfil de risco !</legend>
-
-  <label type="text" name="questao"> variavel pergunta 1 </label> <br>
-
-  <br><br><br>
+  <legend>Contador de questão 1</legend>
 
   <?php
-/*
+
   $questoes = array(
       array(1, "Qual é o seu objetivo principal ao investir?"),
       array(2,"Qual é o prazo estimado para o seu investimento?"),
@@ -112,7 +88,7 @@
       array(10,"Em qual destas situações você se encaixa melhor?")
       
   );
-  
+
   $respostas = array(
       array(1, "Preservação de capital.", "Baixo"),
       array(1, "Crescimento moderado.", "Médio"),
@@ -156,57 +132,46 @@
       
   );
   
-  function pergunta() {
-      global $questoes;
-      global $respostas;
-      
-      // laço de repetição para imprimir as questoes;
-      
-      for ($i = 0; $i < count($questoes); $i++) {
-          echo '<br><label type="text" name="questao.$i.">' . $questoes[$i][1] . '</label> <br>';
-     
-  
-      // laço de repetição para imprimir as respostas 
-      
-      for ($j = 0; $j < count($respostas); $j++) {
-           if ($respostas[$j][0] == $questoes[$i][0]) { // condicional que permite imprimir as respostas com os indices 
-           // do vetor comparando a primeira coluna de questao com a primeira coluna de resposta, sendo igual 
-           // a pergunta e as respectivas respostas sao impressas;
-           
-          echo '<br><label for="resposta' . $j . '">' . $respostas[$j][1] . '</label>';
-          echo '<input type="radio" name="resposta'.$j.'" value="' . $respostas[$j][2] . '" id="resposta' . $j . '"> <br>';
-           }
+      function pergunta() {
+          global $questoes;
+          global $respostas;
+          $a=2;
+          $b=6;
           
+          // laço de repetição para imprimir as questoes;
           
-      }
+          for ($i = 1; $i < $a; $i++) {
+              echo '<br><label type="text" name="questao.$i.">' . $questoes[$i][1] . '</label> <br>';
+         
+      
+          // laço de repetição para imprimir as respostas 
+          
+          for ($j = 3; $j < $b; $j++) {
+               if ($respostas[$j][0] == $questoes[$i][0]) { // condicional que permite imprimir as respostas com os indices 
+               // do vetor comparando a primeira coluna de questao com a primeira coluna de resposta, sendo igual 
+               // a pergunta e as respectivas respostas sao impressas;
+               
+              echo '<br><label for="resposta' . $j . '">' . $respostas[$j][1] . '</label>';
+              echo '<input type="radio" name="resposta.$j" value="' . $respostas[$j][2] . '" id="resposta' . $j . '"> <br>';
+               }
+              
+              
+          }
   }}
   
   pergunta();// chama a função pergunta, sem ela nada é feito !!!
-  */
+  
   ?>
+  <br> <br>    
+<button onclick="enviarRespostas()">Enviar</button>
 
   </fieldset>
 
-
-
 </form>
 
-
-
 </div>
 
 </div>
-
-
-<?php
- echo "teste";
-
-
-?>
-
-
-
-
 
 </body>
 

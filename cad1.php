@@ -16,7 +16,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
   <script src="sub1.js"></script>
-  <script src="validacad.js"></script>
   <script src="validaform.js"></script>
 
   <!-- função para alternar o modo do site -->
@@ -31,7 +30,16 @@
     };
   </script>
 
+<?php
+
+require_once("banco.php");
+require_once("select.php");
+
+$salario = db_faixa_salarial_select();
+
+?>
  
+
 </head>
 
 <body>
@@ -85,8 +93,7 @@
   <button id="login"><a href="login.php">Login / Entrar</a></button>
   
   <br><br>
-
-  <legend>Formulario de cadastro</legend>
+ 
   <br><br>
     <label for="email">E-mail / Usuario</label><br>
     <input type="email" name="email" id="email"><br><br>
@@ -100,34 +107,20 @@
     <label for="nome">Nome</label><br>
     <input type="text" name="nome" id="nome"> <br><br>
 
-<?php
-
-require_once("banco.php");
-require_once("select.php");
-
-$salario = db_faixa_salarial_select();
-
-
-?>
-<select name="faixa_salarial" id="faixa_salarial">
-    <?php foreach ($salario as $row): ?>
+    <select name="faixa_salarial" id="faixa_salarial">
+      <?php foreach ($salario as $row): ?>
         <option value="<?= $row['id_salario'] ?>"><?= $row['fl_faixa_salario'] ?></option>
-    <?php endforeach; ?>
-</select>
-</div>
-<br><br>
-<input type="submit" value="Enviar">
-<br><br>
- 
-  <br><br>
+      <?php endforeach; ?>
+    </select>
+    
+    <br><br>
+    <button type="submit">Enviar</button>
+    </div>
   </span>
-  </fieldset>
 
+</fieldset>
 </form>
-
-
 </div>
-
 </div>
 
 </body>

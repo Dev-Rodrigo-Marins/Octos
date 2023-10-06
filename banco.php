@@ -1,6 +1,6 @@
 <?php
 
-$bd_host = "200.19.01.18"; // ip de acesso ao banco
+$bd_host = "200.19.1.18"; // ip de acesso ao banco
 $sgbd = "pgsql"; // variavel que nao devemos mudar... escolhe o pdo para a conexão.
 $base_de_dados = "rodrigosilva";  // colocar o nome do banco de dados que eu quero acessar
 $bd_usuario = "rodrigosilva";
