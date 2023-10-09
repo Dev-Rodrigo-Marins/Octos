@@ -1,6 +1,5 @@
 <?php
 // Função para inserir dados na tabela de cadastro
-// Função para inserir dados na tabela de cadastro
 function db_insert_cadastro($email, $senha, $nome,$faixa_salarial) {
     global $conn;  // Acessa a conexão global com o banco de dados
 

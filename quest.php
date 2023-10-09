@@ -7,11 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css"> <!--link o arquivo css-->
-  <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"> <!-- fundo fumaça-->
+  <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"/> <!-- fundo fumaça-->
   <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
-  <img class="submenu2" id="cad" src="imagens/do-utilizador.png" width="80" height="80" style="border:solid black">
+  <a href="cad1.php"><img class="submenu2" id="cad" src="imagens/do-utilizador.png" width="80" height="80" style="border:solid black"></a>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
-  <script src="sub1.js"></script>
+  <script src="sub1.js"></script> <!-- chama o js do primeiro semestre-->
+  <!--<script src="validaform.js"></script>-->
 
   <!-- função para alternar o modo do site -->
   <script>
@@ -67,100 +69,47 @@
 
 <div class="janela_modal" id="janela_modal">
 <div class="modal">
-<form action="" method="get">
+<form action="usuarioperfil.php" method="post">
 
 
 <fieldset>
-  <legend>Contador de questão 1</legend>
+  <legend>Formulario de Perfil de Risco!</legend>
 
   <?php
+  session_start();
+    require_once('banco.php');
 
-  $questoes = array(
-      array(1, "Qual é o seu objetivo principal ao investir?"),
-      array(2,"Qual é o prazo estimado para o seu investimento?"),
-      array(3,"Qual é a sua tolerância ao risco?"),
-      array(4,"Como você reagiria se o valor dos seus investimentos diminuísse consideravelmente em um curto período?"),
-      array(5,"Qual é a sua familiaridade com diferentes tipos de investimentos?"),
-      array(6,"Quanto do seu patrimônio você está disposto a investir?"),
-      array(7,"Qual é a sua situação financeira atual?"),
-      array(8,"Você possui alguma experiência prévia em investimentos?"),
-      array(9,"Como você se sente em relação a buscar ativamente novas oportunidades de investimento?"),
-      array(10,"Em qual destas situações você se encaixa melhor?")
-      
-  );
 
-  $respostas = array(
-      array(1, "Preservação de capital.", "Baixo"),
-      array(1, "Crescimento moderado.", "Médio"),
-      array(1, "Alto Crescimento.", "Alto"),
-      //espaçamento para a resposta 2
-      array(2, "Curto prazo (até 2 anos).", "Baixo"),
-      array(2, "Médio prazo (2-5 anos).", "Medio"),
-      array(2, "Longo prazo (mais de 5 anos).", "Alto"),
-      //espaçamento para a resposta 3
-      array(3, "Baixa.", "Baixo"),
-      array(3, "Media.", "Medio"),
-      array(3, "Alta.", "Alto"),
-      //espaçamento para a resposta 4
-      array(4, "Venderia imediatamente.", "Baixo"),
-      array(4, "Monitoraria de perto.", "Medio"),
-      array(4, "Não me preocuparia.", "Alto"),
-      // espaçamento para a resposta 5
-      array(5, "Baixa.", "Baixo"),
-      array(5, "Media.", "Medio"),
-      array(5, "Alta.", "Alto"),
-      // espaçamento para a resposta 6
-      array(6, "Menos de 25%.", "Baixo"),
-      array(6, "Entre 25% e 50%.", "Medio"),
-      array(6, "Mais de 50%.", "Alto"),
-      //espaçamento para a resposta 7
-      array(7, "Estável.", "Baixo"),
-      array(7, "Moderada.", "Medio"),
-      array(7, "Instável.", "Alto"),
-      //espaçamento para a resposta 8
-      array(8, "Nenhuma.", "Baixo"),
-      array(8, "Alguma.", "Medio"),
-      array(8, "Consideravel.", "Alto"),
-      //espaçamento para a resposta 9
-      array(9, "Não estou interessado.", "Baixo"),
-      array(9, "Um pouco interessado.", "Medio"),
-      array(9, "Muito interessado.", "Alto"),
-      //espaçamento para a resposta 10
-      array(10, "Prefiro retornos estáveis.", "Baixo"),
-      array(10, "Estou disposto a aceitar flutuações moderadas.", "Medio"),
-      array(10, "Estou disposto a lidar com grandes flutuações.", "Alto")
-      
-  );
-  
-      function pergunta() {
-          global $questoes;
-          global $respostas;
-          $a=2;
-          $b=6;
-          
-          // laço de repetição para imprimir as questoes;
-          
-          for ($i = 1; $i < $a; $i++) {
-              echo '<br><label type="text" name="questao.$i.">' . $questoes[$i][1] . '</label> <br>';
-         
-      
-          // laço de repetição para imprimir as respostas 
-          
-          for ($j = 3; $j < $b; $j++) {
-               if ($respostas[$j][0] == $questoes[$i][0]) { // condicional que permite imprimir as respostas com os indices 
-               // do vetor comparando a primeira coluna de questao com a primeira coluna de resposta, sendo igual 
-               // a pergunta e as respectivas respostas sao impressas;
-               
-              echo '<br><label for="resposta' . $j . '">' . $respostas[$j][1] . '</label>';
-              echo '<input type="radio" name="resposta.$j" value="' . $respostas[$j][2] . '" id="resposta' . $j . '"> <br>';
-               }
-              
-              
-          }
-  }}
-  
-  pergunta();// chama a função pergunta, sem ela nada é feito !!!
-  
+  function questoes(){
+    global $conn; // busca fora do arquivo a variavel global com a conexao
+    $sth=$conn->prepare("select id_questao,ds_questao from tb_questionario");
+    $sth->execute();
+    return $sth->fetchAll();
+  }
+
+  function resposta(){
+    global $conn; // busca fora do arquivo a variavel global com a conexao
+    $sth=$conn->prepare("select id_questao,ds_resposta,vl_resposta from tb_resposta");
+    $sth->execute();
+    return $sth->fetchAll();
+  }
+
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+ $questoes = questoes(); // Chama a função para obter as questões
+ foreach ($questoes as $questao) {
+     echo '<br><label type="text" name="' . $questao['id_questao'] . '">' . $questao['ds_questao'] . '</label> <br>';
+ 
+     $respostas = resposta();
+     foreach ($respostas as $resposta) {
+         if ($resposta['id_questao'] == $questao['id_questao']) {
+          echo '<br><label for="resposta">' . $resposta['id_questao'] . '. ' . $resposta['ds_resposta'] . '</label>';
+
+             echo '<input type="radio" name="resposta.' . $resposta['id_questao'] . '" value="' . $resposta['vl_resposta'] . '" id="resposta"> <br>';
+         }
+     }
+ }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ?>
   <br> <br>    
 <button onclick="enviarRespostas()">Enviar</button>
