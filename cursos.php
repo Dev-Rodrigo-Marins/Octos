@@ -18,9 +18,14 @@
   <script src="sub1.js"></script>
   <script src="validaform.js"></script>
 
-   <?php session_start();
-        echo"Ola ".$_SESSION['email'].'<a href="Sair.php" id="SAIR"> SAIR </a>'
-    ?>
+  <?php
+    session_start();
+    if(isset($_SESSION['email'])){
+    echo "Olá " . $_SESSION['email'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
+    } else {
+    echo '<a href="login.php" id="SAIR"> ENTRAR </a>';
+    }
+?>
 
 
   <!-- função para alternar o modo do site -->
