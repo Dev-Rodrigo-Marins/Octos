@@ -51,6 +51,6 @@
             $stmtInsercao->bindParam(':vl_resposta', $valor['vl_resposta'],PDO::PARAM_INT);
             $stmtInsercao->execute();
         }
-
+        header("Location: carteira_recomendacao.php");
     ?>
 
