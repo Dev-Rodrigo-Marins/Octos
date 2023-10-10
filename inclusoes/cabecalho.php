@@ -42,17 +42,17 @@
 <!-- submenu de navegaççao entre as paginas do site -->
   <fieldset class="field2" id="field2">
     <table id="tab">
-      <td class="td1" id="td1" onmouseenter="onMouseEnter(\'td1\')" onmouseleave="onMouseLeave(\'td1\')"><a
+      <td class="td1" id="td1" onmouseenter="onMouseEnter('td1')" onmouseleave="onMouseLeave('td1')"><a
           href="sub1.html">Calculadora Renda Fixa </a></td>
-      <td class="td2" id="td1" onmouseenter="onMouseEnter(\'td2\')" onmouseleave="onMouseLeave(\'td2\')"><a
+      <td class="td2" id="td1" onmouseenter="onMouseEnter('td2')" onmouseleave="onMouseLeave('td2')"><a
           href="sub2.html">Parcelar</a></td>
-      <td class="td3" id="td1" onmouseenter="onMouseEnter(\'td3\')" onmouseleave="onMouseLeave(\'td3\')"><a
+      <td class="td3" id="td1" onmouseenter="onMouseEnter('td3')" onmouseleave="onMouseLeave('td3')"><a
           href="sub3.html">Avista</a></td>
-      <td class="td4" id="td1" onmouseenter="onMouseEnter(\'td4\')" onmouseleave="onMouseLeave(\'td4\')"><a
+      <td class="td4" id="td1" onmouseenter="onMouseEnter('td4')" onmouseleave="onMouseLeave('td4')"><a
           href="sub4.html">Projeto Tamar </a></td>
-      <td class="td5" id="td1" onmouseenter="onMouseEnter(\'td5\')" onmouseleave="onMouseLeave(\'td5\')"><a
+      <td class="td5" id="td1" onmouseenter="onMouseEnter('td5')" onmouseleave="onMouseLeave('td5')"><a
           href="sub5.html">Fundos Imobiliarios </a><img class="cadeado" id="cadeado" src="imagens/cadeado.png"></td>
-      <td class="td6" id="td1" onmouseenter="onMouseEnter(\'td6\')" onmouseleave="onMouseLeave(\'td6\')"><a
+      <td class="td6" id="td1" onmouseenter="onMouseEnter('td6')" onmouseleave="onMouseLeave('td6')"><a
           href="sub6.html">Area exclusiva </a><img class="cadeado" id="cadeado1" src="imagens/cadeado.png"></td>
     </table>
   </fieldset>
