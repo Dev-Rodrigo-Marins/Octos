@@ -18,6 +18,15 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
   }
 </script>
 
+<?php
+
+require_once("banco.php");
+require_once("select.php");
+
+$salario = db_faixa_salarial_select();
+
+?>
+
 <form action="inserir_cadastro.php" method="post">
 
 
