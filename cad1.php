@@ -30,7 +30,7 @@ $salario = db_faixa_salarial_select();
 <form action="inserir_cadastro.php" method="post">
 
 
-<fieldset class="janela_modal" id="janela_modal" >
+<fieldset class="janela_modal1" id="janela_modal" >
   <span class="modal1">
 
   <button id="login"><a href="login.php">Login / Entrar</a></button>

@@ -13,7 +13,7 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 
 
     <br><br>
-    <fieldset class="janela_modal" id="janela_modal" >
+    <fieldset class="janela_modal1" id="janela_modal" >
     <span class="modal1">
     <a href="quest.php">* clique aqui para fazer sua analise de risco para investimentos !</a> <br><br>
     <a href="cursos.php">* clique aqui para conhecer os nossos cursos de investimentos !</a> <br><br>
