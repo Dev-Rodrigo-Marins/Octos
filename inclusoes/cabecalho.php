@@ -57,3 +57,11 @@
     </table>
   </fieldset>
 
+  <?php
+    session_start();
+    if(isset($_SESSION['email'])){
+    echo "Olá " . $_SESSION['email'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
+    } else {
+    echo '<a href="login.php" id="SAIR"> ENTRAR </a>';
+    }
+?>

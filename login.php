@@ -33,7 +33,7 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 <form action="autenticar_login.php  " method="post" name="meu_form">
 
 
-<fieldset class="janela_modal" id="janela_modal" >
+<fieldset class="janela_modal1" id="janela_modal" >
   <span class="modal1">
 
   <button class="login" id="login"><a href="login.php">Login / Entrar</a></button>
