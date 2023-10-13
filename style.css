@@ -463,8 +463,8 @@ input{
 
 .janela_modal1{
   width: 100vw;
-  height: 60vh;
-  min-height: 50px;
+  height: 70vh;
+  min-height: 150px;
   position: relative;
   left: 0;
   background-color: rgba(137, 49, 196, 0.719);

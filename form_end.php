@@ -8,21 +8,21 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
   <div class="form-row">
 
   <div class="form-group col-md-2">
-      <label for="inputCEP">CEP :</label><br>
+      <label for="inputCEP">CEP(somente numeros) :</label><br>
       <input type="text" class="form-control" id="inputCEP" ><br><br>
     </div>
   </div>
 
   <div class="form-group col-md-2">
       <label for="inputBairro">Bairro</label><br>
-      <input type="text" class="form-control" id="inputBairro"readonly="readonly"><br><br>
+      <input type="text" class="form-control" id="inputBairro"><br><br>
     </div>
   </div>
 
   </div>
   <div class="form-group">
     <label for="inputAddress">Endereço</label><br>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos" readonly="readonly"><br><br>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos"><br><br>
   </div>
 
   <div class="form-group">
@@ -42,9 +42,15 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
     </div>
   </div>
 
+  <div class="form-group col-md-2">
+      <label for="inputTEL">TELEFONE (apenas numeros)</label><br>
+      <input type="number" class="form-control" id="inputTEL" required placeholder="(xx)xxxxx-xxxx" > <br><br>
+    </div>
+  </div>
+
   </div>
   </div>
-  <button type="submit" class="btn btn-primary">Entrar</button>
+  <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 
 </span>
