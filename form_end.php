@@ -1,50 +1,51 @@
 <?php
 include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
+//session_start();
 ?>
 
 <fieldset class="janela_modal1" id="janela_modal" >
   <span class="modal1">
-<form>
+<form action="inserir_endereco.php" method="POST">
   <div class="form-row">
 
   <div class="form-group col-md-2">
       <label for="inputCEP">CEP(somente numeros) :</label><br>
-      <input type="text" class="form-control" id="inputCEP" ><br><br>
+      <input type="text" class="form-control" name="cep" id="inputCEP" ><br><br>
     </div>
   </div>
 
   <div class="form-group col-md-2">
       <label for="inputBairro">Bairro</label><br>
-      <input type="text" class="form-control" id="inputBairro"><br><br>
+      <input type="text" class="form-control" name="bairro" id="inputBairro"><br><br>
     </div>
   </div>
 
   </div>
   <div class="form-group">
     <label for="inputAddress">Endereço</label><br>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos"><br><br>
+    <input type="text" class="form-control" name="endereco" id="inputAddress" placeholder="Rua dos Bobos"><br><br>
   </div>
 
   <div class="form-group">
     <label for="inputNumber">Numero</label><br>
-    <input type="text" class="form-control" id="inputNumber" placeholder="nº 0"><br><br>
+    <input type="text" class="form-control" name="numero" id="inputNumber" placeholder="nº 0" required><br><br>
   </div>
-
+  
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Cidade</label><br>
-      <input type="text" class="form-control" id="inputCity"readonly="readonly" > <br><br>
+      <input type="text" class="form-control" name="cidade" id="inputCity"readonly="readonly" > <br><br>
     </div>
 
     <div class="form-group col-md-2">
       <label for="inputEstado">ESTADO</label><br>
-      <input type="text" class="form-control" id="inputEstado" readonly="readonly"> <br><br>
+      <input type="text" class="form-control" name="estado" id="inputEstado" readonly="readonly"> <br><br>
     </div>
   </div>
 
   <div class="form-group col-md-2">
       <label for="inputTEL">TELEFONE (apenas numeros)</label><br>
-      <input type="number" class="form-control" id="inputTEL" required placeholder="(xx)xxxxx-xxxx" > <br><br>
+      <input type="number" class="form-control" name="telefone" id="inputTEL" required placeholder="(xx)xxxxx-xxxx" > <br><br>
     </div>
   </div>
 

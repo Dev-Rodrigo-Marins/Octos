@@ -5,6 +5,6 @@ session_start();
 session_destroy();
 
 // Redirecionar para a página de cursos
-header("location: cursos.php");
+header("location: login.php");
 exit();
 ?>

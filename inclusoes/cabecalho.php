@@ -59,9 +59,53 @@
 
   <?php
     session_start();
-    if(isset($_SESSION['email'])){
-    echo "Olá " . $_SESSION['email'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
+    require_once "banco.php";
+// bloco de codigo para pegar o nome do usuario
+$email = $_SESSION['email'];
+
+$sql = 'SELECT nm_usuario FROM tb_usuariocadastro WHERE ds_email = :reserva';
+
+// Preparar a declaração usando um prepared statement
+$stmt = $conn->prepare($sql);
+
+// Vincular o valor da variável $email ao marcador de posição :reserva
+$stmt->bindParam(':reserva', $email, PDO::PARAM_STR);
+
+// Executar a consulta
+$stmt->execute();
+
+// Obter o resultado como uma array associativa
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$_SESSION['nome'] = '';
+if ($result) {
+  $_SESSION['nome'] = $result['nm_usuario'];
+} else {
+    echo "Usuário não encontrado.";
+}
+
+
+
+    if(isset($_SESSION['nome'])){
+    echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
     } else {
     echo '<a href="login.php" id="SAIR"> ENTRAR </a>';
     }
+    
+    //bloco de codigo para descobrir o id_usuario
+
+$nome = $_SESSION['nome'];
+
+$sql ='SELECT id_usuario from tb_usuariocadastro where nm_usuario =:reserva';
+$stmt = $conn ->prepare($sql);
+$stmt ->bindParam(':reserva',$nome,PDO::PARAM_STR);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if($result){
+    $_SESSION['id_usuario'] = $result['id_usuario'];
+}
+else{
+    echo "id usuario nao encontrado!";
+}
 ?>

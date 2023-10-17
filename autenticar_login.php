@@ -4,12 +4,6 @@ session_start();// inicia a sessao, como se inicia-se a memoria do computador
 
 require_once "banco.php";
 
-// utilizado para verificar os dados que foram enviados na tela de login
-// var_dump($_POST); 
-
-//email = indentificação do usuario no banco
-//senha = senha do usuario no banco
-
 if($_SERVER["REQUEST_METHOD"]=='POST'){ // se o metodo de envio for post... as variaveis recebem os valores enviados!
 $usuario = $_POST["email"];
 $senha = $_POST["senha"];
