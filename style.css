@@ -476,3 +476,7 @@ input{
   border: 3px ;
 }
 
+a {
+  color: #000000; /* Define a cor do texto para azul (#007bff) */
+  text-decoration: none; /* Remove o sublinhado padrão */
+}

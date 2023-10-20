@@ -29,7 +29,7 @@ function db_insert_cadastro($email, $senha, $nome,$faixa_salarial) {
     // Executa a consulta SQL
     if ($stmt->execute()) {
         // Após a inserção, redireciona para a página index.php após 3 segundos
-        header("refresh:3;url=index.php");
+        header("refresh:3;url=login.php");
         echo "Dados inseridos com sucesso. Redirecionando para a página inicial em 3 segundos...";
         exit();  // Certifique-se de encerrar o script após o redirecionamento
     } 

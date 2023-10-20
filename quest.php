@@ -22,9 +22,28 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
   <legend>Formulario de Perfil de Risco!</legend>
 
   <?php
-  session_start();
+  
     require_once('banco.php');
 
+  //echo($_SESSION['id_usuario']);
+  $sql = 'SELECT SUM(vl_resposta) as total_resposta FROM tb_usuarioperfil WHERE id_usuario = :reserva';
+  global $conn; // buscando a variável conn do arquivo banco.php
+  $stmt = $conn->prepare($sql);
+  $stmt->bindParam(':reserva', $_SESSION['id_usuario']);
+  $stmt->execute();
+  $quest = $stmt->fetch(PDO::FETCH_ASSOC);
+  
+  if ($quest && $quest['total_resposta'] > 0) {
+      echo 'Perfil de Risco já preenchido';
+
+     echo'<br><br><button ><a href="quest_update.php"> Atualizar Perfil.</a></button>'; 
+
+     echo'<br><br><button ><a href="carteira_recomendacao.php"> Acessar Painel. </a></button>';
+
+  } 
+  else {
+      echo 'Necessário preencher o perfil de risco';
+  
 
   function questoes(){
     global $conn; // busca fora do arquivo a variavel global com a conexao
@@ -55,11 +74,11 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
          }
      }
  }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  ?>
-  <br> <br>    
-<button onclick="enviarRespostas()">Enviar</button>
+ echo "<br> <br>";    
+echo'<button onclick="enviarRespostas()">Enviar</button>';
 
+}
+?>
   </fieldset>
 
 </form>

@@ -92,7 +92,7 @@ if ($result) {
     echo '<a href="login.php" id="SAIR"> ENTRAR </a>';
     }
     
-    //bloco de codigo para descobrir o id_usuario
+//bloco de codigo para descobrir o id_usuario;
 
 $nome = $_SESSION['nome'];
 
@@ -108,4 +108,6 @@ if($result){
 else{
     echo "id usuario nao encontrado!";
 }
+// fim do bloco;
+
 ?>
