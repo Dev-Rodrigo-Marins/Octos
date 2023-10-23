@@ -22,10 +22,7 @@ echo
 <table class="tabela3">
 <tr>
 <td colspan="4" style="text-align: center;"><strong>Carteira Recomendada OCTOS '.$_SESSION['perfil'].'<br><br> 
-  <?php 
-echo $_SESSION[\'email\'];
 
-  ?></strong></td>
 </tr>
 <tr>
 <td><strong>Posição</strong></td>
