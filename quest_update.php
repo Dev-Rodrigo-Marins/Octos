@@ -52,7 +52,7 @@ function questoes(){
  # fim do bloco que imprime as questoes e respostas ao usuario
 
 echo "<br> <br>";    
-echo'<button onclick="enviarRespostas()">Enviar</button>';
+echo'<button >Enviar</button>';
 
     echo'</fieldset>
         </form>
