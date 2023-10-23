@@ -27,9 +27,46 @@ echo
 <tr>
 <td><strong>Posição</strong></td>
 <td><strong>Ticker</strong></td>
-<td><strong>Fundo Imobiliário</strong></td>
+<td><strong>Ações</strong></td>
 <td><strong>Rentabilidade 2022</strong></td>
 </tr>
+
+<tr>
+<td>1</td>
+<td> SG_ACAO </td>
+<td> NM_ACAO </td>
+<td class="rent">32%</td>
+</tr>
+'
+
+// espaço reservado para colocar as varivaveis referente aos ativos a serem investidos;
+
+.'
+<tr>
+<td>2</td>
+<td>HGRE11</td>
+<td>CSHG Real Estate</td>
+<td class="rent">30%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HFOF11</td>
+<td>Hedge Brasil Shopping</td>
+<td class="rent">28%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>KNRI11</td>
+<td>Kinea Renda Imobiliária</td>
+<td class="rent">26%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MXRF11</td>
+<td>Maxi Renda</td>
+<td class="rent">24%</td>
+</tr>
+
 <tr>
 <td>1</td>
 <td>HGBS11</td>
@@ -60,36 +97,7 @@ echo
 <td>Maxi Renda</td>
 <td class="rent">24%</td>
 </tr>
-<tr>
-<td>6</td>
-<td>RNGO11</td>
-<td>Rio Negro</td>
-<td class="rent">22%</td>
-</tr>
-<tr>
-<td>7</td>
-<td>VRTA11</td>
-<td>Vinci Renda</td>
-<td class="rent">20%</td>
-</tr>
-<tr>
-<td>8</td>
-<td>RBRF11</td>
-<td>RBR Alpha Multiestratégia Real</td>
-<td class="rent">18%</td>
-</tr>
-<tr>
-<td>9</td>
-<td>KNIP11</td>
-<td>Kinea Índice de Preços</td>
-<td class="rent">16%</td>
-</tr>
-<tr>
-<td>10</td>
-<td>HCTR11</td>
-<td>Hospital da Criança</td>
-<td class="rent">14%</td>
-</tr>
+
 </table>';
 
 
