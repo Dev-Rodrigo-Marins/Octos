@@ -26,6 +26,7 @@ echo"Ola ".$_SESSION['nome'];
     <a href="cursos.php">* clique aqui para conhecer os nossos cursos de investimentos !</a> <br><br>
     <a href="rec_inv.php">* clique aqui para ver a recomendacões de investimento para o seu perfil( necessario ter perfil de risco definido!) </a> <br><br>
     <a href="form_end.php">* clique aqui para preencher o seu endereço completo... nao leva 2 min! </a> <br><br>
+    <a href="compra.php">* clique aqui para realizar sua compra e ver nossa recomendação personalizada para voce! </a> <br><br>
     </span>
     </fieldset>
 

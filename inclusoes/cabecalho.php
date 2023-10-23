@@ -110,4 +110,27 @@ else{
 }
 // fim do bloco;
 
+//bloco de codigo para descobrir o ds_perfil do usuario;
+
+
+
+$sql = 'SELECT ds_perfil FROM tb_compra WHERE id_usuario = :id_usuario';
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id_usuario', $_SESSION['id_usuario']);
+$stmt->execute();
+$perfil = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($perfil) {
+  $_SESSION['perfil'] = $perfil['ds_perfil']; // Corrigir 'perfil' para 'ds_perfil'
+}
+/* foreach para mostrar os valores salvos na sessao;
+echo '<br><br>';
+echo "ELEMENTOS DA SESSAO <br><br> ";
+
+
+foreach ($_SESSION as $chave => $valor) {
+    echo "$chave: $valor<br>";
+}
+*/
+
 ?>
