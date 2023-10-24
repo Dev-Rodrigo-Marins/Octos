@@ -1,109 +1,65 @@
 <?php
-
 require_once("./banco.php");
 include_once "./inclusoes/cabecalho.php";
-
+/*
 echo '<br><br>';
 echo "ELEMENTOS DA SESSAO <br><br> ";
-
 
 foreach ($_SESSION as $chave => $valor) {
     echo "$chave: $valor<br>";
 }
-
-echo
-'<div class="titulo">
-<h4>Recomendação de investimentos de '.$_SESSION['perfil'].' para
-<br> '.$_SESSION['nome'].'
-  <br><br> Conforme o seu perfil de risco segue recomendações de ativos ao qual voce deve ter em sua carteira de investimentos
+*/
+echo '
+<div class="titulo">
+<h4>Recomendação de investimentos de ' . $_SESSION['perfil'] . ' para
+<br> ' . $_SESSION['nome'] . '
+  <br><br> Conforme o seu perfil de risco segue recomendações de ativos ao qual você deve ter em sua carteira de investimentos
 </h4>
-</div>
+</div>';
 
-<table class="tabela3">
+echo'
+<table class=\'tabela3\'>
 <tr>
-<td colspan="4" style="text-align: center;"><strong>Carteira Recomendada OCTOS '.$_SESSION['perfil'].'<br><br> 
-
-</tr>
-<tr>
-<td><strong>Posição</strong></td>
+<td><strong>Perfil</strong></td>
 <td><strong>Ticker</strong></td>
 <td><strong>Ações</strong></td>
 <td><strong>Rentabilidade 2022</strong></td>
-</tr>
+</tr><br>';
 
-<tr>
-<td>1</td>
-<td> SG_ACAO </td>
-<td> NM_ACAO </td>
-<td class="rent">32%</td>
-</tr>
-'
+// Corrija a consulta SQL usando marcadores de posição '?'
+$sql = "SELECT sg_acao, nm_acao,tb_acao.ds_perfil FROM tb_acao, tb_compra WHERE tb_acao.ds_perfil = ? AND tb_compra.id_usuario = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(1, $_SESSION['perfil']);
+$stmt->bindParam(2, $_SESSION['id_usuario']);
+$stmt->execute();
 
-// espaço reservado para colocar as varivaveis referente aos ativos a serem investidos;
+// Use um loop para iterar pelas linhas do resultado da consulta
+while ($acao = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  echo 
+  '<tr>
+   <td>'.$perfil['ds_perfil'].'</td>
+   <td>'.$acao['sg_acao'] . ' </td>
+   <td>'.$acao['nm_acao'] . ' </td>
+   <td class="rent">32%</td>
+   </tr> <br>';
+}
 
-.'
-<tr>
-<td>2</td>
-<td>HGRE11</td>
-<td>CSHG Real Estate</td>
-<td class="rent">30%</td>
-</tr>
-<tr>
-<td>3</td>
-<td>HFOF11</td>
-<td>Hedge Brasil Shopping</td>
-<td class="rent">28%</td>
-</tr>
-<tr>
-<td>4</td>
-<td>KNRI11</td>
-<td>Kinea Renda Imobiliária</td>
-<td class="rent">26%</td>
-</tr>
-<tr>
-<td>5</td>
-<td>MXRF11</td>
-<td>Maxi Renda</td>
-<td class="rent">24%</td>
-</tr>
+echo '</table>';
 
-<tr>
-<td>1</td>
-<td>HGBS11</td>
-<td>CSHG Brasil Shopping</td>
-<td class="rent">32%</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HGRE11</td>
-<td>CSHG Real Estate</td>
-<td class="rent">30%</td>
-</tr>
-<tr>
-<td>3</td>
-<td>HFOF11</td>
-<td>Hedge Brasil Shopping</td>
-<td class="rent">28%</td>
-</tr>
-<tr>
-<td>4</td>
-<td>KNRI11</td>
-<td>Kinea Renda Imobiliária</td>
-<td class="rent">26%</td>
-</tr>
-<tr>
-<td>5</td>
-<td>MXRF11</td>
-<td>Maxi Renda</td>
-<td class="rent">24%</td>
-</tr>
+$stmt->execute();
 
-</table>';
+echo '<div class =\'tabela3\'>';
 
+while ($acao= $stmt->fetch(PDO::FETCH_ASSOC)) {
+  echo '<input type="text" class="form-control" name="' . $acao['sg_acao'] . '" placeholder="' . $acao['sg_acao'] . '">';
+  echo '<select class="acao" name="acao" id="acao">';
+  echo "<option value='" . $acao['sg_acao'] . "'>" . $acao['sg_acao'] . '"</option>"
 
+  </select>';
+ 
+  echo '<input type="text" class="form-control quantidade" name="quantidade" placeholder="quantidade"> <br> <br>';
+}
+echo'</div>';
 
-
-
-include_once "inclusoes/rodape.php";
-
+include_once 'inclusoes/rodape.php'; // chama o arquivo do cabeçalho padrao
 ?>
