@@ -95,4 +95,4 @@ echo'<button onclick="enviarRespostas()">Enviar</button>';
 <?php
 
 include_once 'inclusoes/rodape.php'; // chama o arquivo do cabeçalho padrao
-?>
+?> 

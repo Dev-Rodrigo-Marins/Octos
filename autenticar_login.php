@@ -10,7 +10,7 @@ $senha = $_POST["senha"];
 
 // iniciar a preparação do sql para conectar ao banco
 
-$query = 'SELECT * FROM tb_usuariocadastro where ds_email = :usuario';
+$query = 'SELECT * FROM tb_login where ds_email = :usuario';
 $stmt = $conn->prepare($query);
 $stmt->bindParam(':usuario',$usuario);
 $stmt->execute();

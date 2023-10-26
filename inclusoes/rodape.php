@@ -31,7 +31,7 @@
       <br>Rua Comendador Neto 2354
       <br> Anchieta, São Paulo - Brasil.
       <br>Cep 09834-000
-    </p>
+    </p> 
 
   </fieldset>
 </footer>

@@ -27,7 +27,7 @@ echo'
 </tr><br>';
 
 // Corrija a consulta SQL usando marcadores de posição '?'
-$sql = "SELECT sg_acao, nm_acao,tb_acao.ds_perfil FROM tb_acao, tb_compra WHERE tb_acao.ds_perfil = ? AND tb_compra.id_usuario = ?";
+$sql = "SELECT sg_acao, nm_acao,tb_acao.ds_perfil FROM tb_acao, tb_recomendacao WHERE tb_acao.ds_perfil = ? AND tb_recomendacao.id_usuario = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(1, $_SESSION['perfil']);
 $stmt->bindParam(2, $_SESSION['id_usuario']);

@@ -39,5 +39,5 @@ switch ($sgbd) {
 							
         break;
 }
-
+ 
 ?>

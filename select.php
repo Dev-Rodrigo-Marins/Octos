@@ -5,4 +5,4 @@ function db_faixa_salarial_select(){
 	$sth->execute();
 	return $sth->fetchAll();
 }
-?>
+?> 

@@ -22,4 +22,4 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 <?php
 
 include_once 'inclusoes/rodape.php'; // chama o arquivo do cabeçalho padrao
-?>
+?> 

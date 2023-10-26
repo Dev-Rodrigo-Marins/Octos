@@ -74,4 +74,4 @@ $salario = db_faixa_salarial_select();
 <?php
 
 include_once 'inclusoes/rodape.php'; // chama o arquivo do cabeçalho padrao
-?>
+?> 

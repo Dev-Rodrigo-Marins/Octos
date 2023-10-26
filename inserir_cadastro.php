@@ -14,7 +14,7 @@ function db_insert_cadastro($email, $senha, $nome,$faixa_salarial) {
 
 
     // Prepara a consulta SQL com placeholders
-    $sql = "INSERT INTO tb_usuariocadastro (ds_email, ds_senha, nm_usuario, id_salario)
+    $sql = "INSERT INTO tb_login (ds_email, ds_senha, nm_usuario, id_salario)
             VALUES (:email, :senha, :nome,:faixa_salarial)";
     ;
     // Prepara a consulta SQL usando os placeholders

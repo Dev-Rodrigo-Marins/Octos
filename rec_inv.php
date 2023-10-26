@@ -101,4 +101,4 @@ session_start();
 <?php
 
 include_once 'inclusoes/rodape.php'; // chama o arquivo do cabeçalho padrao
-?>
+?> 

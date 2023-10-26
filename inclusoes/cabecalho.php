@@ -63,7 +63,7 @@
 // bloco de codigo para pegar o nome do usuario
 $email = $_SESSION['email'];
 
-$sql = 'SELECT nm_usuario FROM tb_usuariocadastro WHERE ds_email = :reserva';
+$sql = 'SELECT nm_usuario FROM tb_login WHERE ds_email = :reserva';
 
 // Preparar a declaração usando um prepared statement
 $stmt = $conn->prepare($sql);
@@ -96,7 +96,7 @@ if ($result) {
 
 $nome = $_SESSION['nome'];
 
-$sql ='SELECT id_usuario from tb_usuariocadastro where nm_usuario =:reserva';
+$sql ='SELECT id_usuario from tb_login where nm_usuario =:reserva';
 $stmt = $conn ->prepare($sql);
 $stmt ->bindParam(':reserva',$nome,PDO::PARAM_STR);
 $stmt->execute();
@@ -114,7 +114,7 @@ else{
 
 
 
-$sql = 'SELECT ds_perfil FROM tb_compra WHERE id_usuario = :id_usuario';
+$sql = 'SELECT ds_perfil FROM tb_recomendacao WHERE id_usuario = :id_usuario';
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':id_usuario', $_SESSION['id_usuario']);
 $stmt->execute();

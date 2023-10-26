@@ -77,7 +77,7 @@ values(:id_usuario,:ds_endereco,:nu_telefone,:ds_bairro,:id_cidade,:nu_cep,:id_e
 //inserir_endereco($cep, $bairro,$endereco,$numero,$cidade,$estado,$telefone);
 
 
-
+ 
 
 
 ?>

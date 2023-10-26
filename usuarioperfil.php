@@ -10,7 +10,7 @@ if (isset($_SESSION['email'])) {
  $email = $_SESSION['email'];
 
 // Preparar a consulta SQL
-$query = "SELECT id_usuario FROM tb_usuariocadastro WHERE ds_email = :email";
+$query = "SELECT id_usuario FROM tb_login WHERE ds_email = :email";
 
 // Preparar a declaração SQL
 $stmt = $conn->prepare($query);
@@ -53,7 +53,7 @@ foreach ($valoresInsercao as $valor) {
 }
 
 
-$sql = "UPDATE tb_usuariocadastro
+$sql = "UPDATE tb_login
 SET ds_perfil = 
   CASE
     WHEN (SELECT SUM(vl_resposta) FROM tb_usuarioperfil WHERE id_usuario = :id_usuario) <= 10 THEN 'Baixo Risco'
@@ -66,13 +66,13 @@ $stmt =$conn->prepare($sql);
 $stmt ->bindParam(':id_usuario',$idUsuario);
 $stmt ->execute();
 
-$sql2 = "insert into tb_compra (id_usuario) values (:id_usuario)";
+$sql2 = "insert into tb_recomendacao (id_usuario,ds_perfil) values (:id_usuario,'nao calculado')";
 $stmt = $conn->prepare($sql2);
 $stmt->bindParam(':id_usuario', $idUsuario);
 $stmt->execute();
 
-$sql3 = "UPDATE tb_compra AS c
-         SET ds_perfil = (SELECT ds_perfil FROM tb_usuariocadastro WHERE id_usuario = :id_usuario)
+$sql3 = "UPDATE tb_recomendacao AS c
+         SET ds_perfil = (SELECT ds_perfil FROM tb_login WHERE id_usuario = :id_usuario)
          WHERE c.id_usuario = :id_usuario";
 
 $stmt = $conn -> prepare($sql3);

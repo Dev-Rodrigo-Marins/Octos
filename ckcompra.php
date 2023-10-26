@@ -2,7 +2,14 @@
 
 require_once("./banco.php");
 include_once "./inclusoes/cabecalho.php";
+/*
+echo '<br><br>';
+echo "ELEMENTOS DA SESSAO <br><br> ";
 
+foreach ($_SESSION as $chave => $valor) {
+    echo "$chave: $valor<br>";
+}
+*/
 ?>
 
 <script src="validaform.js"></script>
@@ -24,28 +31,28 @@ include_once "./inclusoes/cabecalho.php";
         <?php
             // Execute a Consulta 1 para obter as recomendações de compra e armazene em $recomendacoes (um array)
             // Corrija a consulta SQL usando marcadores de posição '?'
-            $sql = "SELECT sg_acao, nm_acao,vl_acao,tb_acao.ds_perfil FROM tb_acao, tb_compra WHERE tb_acao.ds_perfil = ? AND tb_compra.id_usuario = ?";
+            $sql = "SELECT sg_acao, nm_acao,vl_acao,tb_acao.ds_perfil FROM tb_acao, tb_recomendacao WHERE tb_acao.ds_perfil = ? AND tb_recomendacao.id_usuario = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $_SESSION['perfil']);
             $stmt->bindParam(2, $_SESSION['id_usuario']);
             $stmt->execute();
 
-            $recomendacao =$stmt->fetch(PDO::FETCH_ASSOC);
+            $recomendacao =$stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $a=25;    
             $b=3;
 
 
-              while ($recomendacao = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                  echo '<label>
-                          <input type="checkbox" name="comprar" id="rec" value="' . $recomendacao['sg_acao'] . '"checked >
-                          ' . $recomendacao['sg_acao'] .'R$'.$recomendacao['vl_acao'].'
+            foreach ($recomendacao as $item) {
+                echo '<label>
+                          <input type="checkbox" name="comprar" id="rec" value="' . $item['sg_acao'] . '"checked >
+                          ' . $item['sg_acao'] .'R$'.$item['vl_acao'].'
                       </label>
                       <input type="number" name="quantidade" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
-                      <input type="number" name="total" value="'.($a + (3*$b))*$recomendacao['vl_acao'].'">
+                      <input type="number" name="total" value="'.($a + (3*$b))*$item['vl_acao'].'">
                       <br>';
-                      $b--;
-              }
+                $b--;
+            }
              ?>
     
 </div>
@@ -57,18 +64,18 @@ include_once "./inclusoes/cabecalho.php";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $_SESSION['perfil']);
             $stmt->execute();
-            $ativos = $stmt->fetch(PDO::FETCH_ASSOC);
+            $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $a=0;    
             $b=0;
 
-            while ($ativos = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            foreach ($ativos as $ativo) {
                 echo '<label>
-                        <input type="checkbox" name="comprar[]" value="' . $ativos['sg_acao'] . '">
-                        ' . $ativos['sg_acao'] .'R$'.$ativos['vl_acao'].'
+                        <input type="checkbox" name="comprar[]" value="' . $ativo['sg_acao'] . '">
+                        ' . $ativo['sg_acao'] . ' R$' . $ativo['vl_acao'] . '
                     </label>
                     <input type="number" name="quantidade" placeholder="Ativos fora do seu perfil de risco!" >
-                    <input type="number" name="total" value="'.($a + (3*$b))*$ativos['vl_acao'].'">
+                    <input type="number" name="total" value="' . ($a + (3 * $b)) * $ativo['vl_acao'] . '">
                       <br>';
             }
         ?>

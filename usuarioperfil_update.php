@@ -9,7 +9,7 @@ if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 
     // Preparar a consulta SQL
-    $sql = "SELECT id_usuario FROM tb_usuariocadastro WHERE ds_email = :email";
+    $sql = "SELECT id_usuario FROM tb_login WHERE ds_email = :email";
 
     // Preparar a declaração SQL
     $stmt = $conn->prepare($sql);
@@ -47,7 +47,7 @@ foreach ($valores_insercao as $valor) {
 }
 
 // Atualizar o perfil do usuário
-$sql_atualizar_perfil = "UPDATE tb_usuariocadastro
+$sql_atualizar_perfil = "UPDATE tb_login
     SET ds_perfil = 
     CASE
         WHEN (SELECT SUM(vl_resposta) FROM tb_usuarioperfil WHERE id_usuario = :id_usuario) <= 10 THEN 'Baixo Risco'
@@ -60,8 +60,8 @@ $stmt_atualizar_perfil = $conn->prepare($sql_atualizar_perfil);
 $stmt_atualizar_perfil->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
 $stmt_atualizar_perfil->execute();
 
-// Atualizar a tabela tb_compra
-$sql_atualizar_compra = "UPDATE tb_compra SET ds_perfil = (SELECT ds_perfil FROM tb_usuariocadastro WHERE tb_usuariocadastro.id_usuario = tb_compra.id_usuario) WHERE tb_compra.id_usuario = :id_usuario";
+// Atualizar a tabela tb_recomendacao
+$sql_atualizar_compra = "UPDATE tb_recomendacao SET ds_perfil = (SELECT ds_perfil FROM tb_login WHERE tb_login.id_usuario = tb_recomendacao.id_usuario) WHERE tb_recomendacao.id_usuario = :id_usuario";
 
 $stmt_atualizar_compra = $conn->prepare($sql_atualizar_compra);
 $stmt_atualizar_compra->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
