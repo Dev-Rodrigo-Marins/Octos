@@ -25,7 +25,7 @@ foreach ($_SESSION as $chave => $valor) {
 </div>
 
 <div class='tabela3'>
-<form action="processar_compra.php" method="get">
+<form action="processar_compra.php" method="post">
     <div class="lista-recomendacoes">
         <h3>Recomendações de Compra:</h3>
         <?php
@@ -41,17 +41,19 @@ foreach ($_SESSION as $chave => $valor) {
 
             $a=25;    
             $b=3;
+            $c=1;
 
 
             foreach ($recomendacao as $item) {
                 echo '<label>
-                          <input type="checkbox" name="comprar" id="rec" value="' . $item['sg_acao'] . '"checked >
+                          <input type="checkbox" name="comprar'.$c.'" id="rec" value="' . $item['sg_acao'] . '"checked >
                           ' . $item['sg_acao'] .'R$'.$item['vl_acao'].'
                       </label>
-                      <input type="number" name="quantidade" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
-                      <input type="number" name="total" value="'.($a + (3*$b))*$item['vl_acao'].'">
+                      <input type="number" name="quantidade'.$c.'" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
+                      <input type="number" name="total'.$c.'" value="'.($a + (3*$b))*$item['vl_acao'].'">
                       <br>';
                 $b--;
+                $c++;
             }
              ?>
     
@@ -68,15 +70,17 @@ foreach ($_SESSION as $chave => $valor) {
 
             $a=0;    
             $b=0;
+            
 
             foreach ($ativos as $ativo) {
                 echo '<label>
-                        <input type="checkbox" name="comprar[]" value="' . $ativo['sg_acao'] . '">
+                        <input type="checkbox" name="comprar'.$c.'" value="' . $ativo['sg_acao'] . '">
                         ' . $ativo['sg_acao'] . ' R$' . $ativo['vl_acao'] . '
                     </label>
-                    <input type="number" name="quantidade" placeholder="Ativos fora do seu perfil de risco!" >
-                    <input type="number" name="total" value="' . ($a + (3 * $b)) * $ativo['vl_acao'] . '">
+                    <input type="number" name="quantidade'.$c.'" placeholder="Ativos fora do seu perfil de risco!" >
+                    <input type="number" name="total'.$c.'" value="">
                       <br>';
+                      $c++;
             }
         ?>
     </div>
