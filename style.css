@@ -50,8 +50,8 @@ h4 {
   margin: 0.5% 85% 0.5% 0.5%;
   z-index: 2;
   top: 2px;
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   font-weight: bold;
   background-color: rgba(137, 49, 196, 0.719);
   border-radius: 10px;
@@ -59,15 +59,19 @@ h4 {
 }
 
 .submenu2 {
-  margin: -2.5% 0.5% 0.5% 95%;
+  margin: -4.0% 0.5% 0.5% 92%;
   z-index: 3;
-  top: 2px;
+  top: 10px;
+  height: 100px;
+  width: 100px;
   font-weight: bold;
   background-color: rgba(137, 49, 196, 0.719);
   border-radius: 10px;
   color: rgb(236, 229, 229);
   border: gray;
   border-color: #333;
+  align-items: center;
+  text-align: center;
 }
 
 

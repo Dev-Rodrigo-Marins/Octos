@@ -10,8 +10,12 @@
   <link rel="stylesheet" href="style.css"> <!--link o arquivo css-->
   <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"> <!-- fundo fumaça-->
   <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
-  <a href="cad1.php"><img class="submenu2" id="cad" src="imagens/do-utilizador.png" width="80" height="80" style="border:solid black"></a>
- 
+  <div class="submenu2" id="cad" style="border:solid black" width="100" height="100" >
+  <a href="cad1.php">
+  <img src="imagens/do-utilizador.png" width="80" height="50" >
+  <span >Entrar</span></a>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
   <script src="sub1.js"></script>
 
