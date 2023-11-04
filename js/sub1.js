@@ -152,10 +152,10 @@ function onMouseLeave(className) {
 
 function alternarModo() {
   var elemento = document.getElementsByTagName("body")[0];
-  var btnModoEscuro = document.getElementById("btnModoEscuro");
-  var modoEscuro = localStorage.getItem("modoEscuro");
+  var btnModoEscuro = document.getElementById("modoescuro");
+  var modoescuro = localStorage.getItem("modoescuro");
 
-  if (modoEscuro === "true") {
+  if (modoescuro === "true") {
     modoclaro();
     btnModoEscuro.innerHTML = "Modo Escuro";
   } else {
@@ -200,7 +200,7 @@ function modoescuro() {
 
 
   // Armazena a preferência do usuário no localStorage, para evitar ter que alterar a cada troca de sub-pagina.
-  localStorage.setItem("modoEscuro", "true");
+  localStorage.setItem("modoescuro", "true");
 
   // Chama a função alternarModo()
   alternarModo();
@@ -239,7 +239,7 @@ function modoclaro() {
   elemento.innerHTML = "Modo Escuro";
 
   // Remove a preferência do usuário do localStorage, para evitar alternar a cada troca de sub-pagina.
-  localStorage.removeItem("modoEscuro");
+  localStorage.removeItem("modoescuro");
 
   // Chama a função alternarModo()
   alternarModo();

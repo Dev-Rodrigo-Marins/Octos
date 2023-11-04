@@ -17,12 +17,12 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
-  <script src="../sub1.js"></script>
+  <script src="../js/sub1.js"></script>
 
   <!-- função para alternar o modo do site -->
   <script>
     window.onload = function () {
-      var modoEscuro = localStorage.getItem("modoEscuro");
+      var modoEscuro = localStorage.getItem("modoescuro");
       if (modoEscuro === "true") {
         modoescuro();
       } else {
@@ -60,6 +60,7 @@
           href="sub6.html">Area exclusiva </a><img class="cadeado" id="cadeado1" src="imagens/cadeado.png"></td>
     </table>
   </fieldset>
+</body>
 
   <?php
     session_start();
