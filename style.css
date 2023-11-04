@@ -1,0 +1,486 @@
+/* Estilos gerais, utilizado nas tags html de uma forma geral */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #141414;
+}
+
+p {
+  padding: 10px;
+}
+
+h1 {
+  background-color: rgba(137, 49, 196, 0.719);
+  text-align: center;
+  border-radius: 10px;
+  color: rgb(236, 229, 229);
+  padding: 10px;
+}
+
+a {
+  color: rgb(236, 229, 229);
+}
+
+h4 {
+  text-align: center;
+}
+
+/* Estilos do cabeçalho, usado para formatação de itens no cabeçalho */
+
+#octos {
+  font-family: OctopusBold, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fundo {
+  position: relative;
+  z-index: 0;
+}
+
+#polvo {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#modoescuro {
+  position: absolute;
+  margin: 0.5% 85% 0.5% 0.5%;
+  z-index: 2;
+  top: 2px;
+  height: 100px;
+  width: 100px;
+  font-weight: bold;
+  background-color: rgba(137, 49, 196, 0.719);
+  border-radius: 10px;
+  color: rgb(236, 229, 229);
+}
+
+.submenu2 {
+  margin: -4.0% 0.5% 0.5% 92%;
+  z-index: 3;
+  top: 10px;
+  height: 100px;
+  width: 100px;
+  font-weight: bold;
+  background-color: rgba(137, 49, 196, 0.719);
+  border-radius: 10px;
+  color: rgb(236, 229, 229);
+  border: gray;
+  border-color: #333;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* Estilos da tabela, usados para formatação das tabelas */
+table#tab {
+  font-size: large;
+  width: 100%;
+  color: rgb(211, 211, 211);
+  font-weight: bold;
+}
+
+td#td1 {
+  border: solid black;
+  text-align: center;
+  width: 16%;
+  border-radius: 10px;
+  vertical-align: middle;
+  color: rgb(211, 211, 211);
+  background-color: rgba(137, 49, 196, 0.719);
+}
+
+
+/* Estilos do conteúdo, usados para ajuste de formatação de modo geral */
+
+
+.container {
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabela2 {
+  overflow: auto;
+  height: 30%;
+  width: min-content;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(137, 49, 196, 0.719);
+  border: solid black;
+  color: rgb(211, 211, 211);
+  flex: 1;
+  text-align: left;
+}
+
+.parceiro {
+  flex: 1;
+  padding: 20px;
+  border: 3px solid black;
+  margin-left: 100px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.video-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+.video-box iframe {
+  width: 750px;
+  height: 450px;
+  border: 1px black;
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.videos iframe {
+  width: 300px;
+  height: 200px;
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.video-container iframe {
+  width: 300px;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.video-description {
+  float: left;
+}
+
+.gif_nu {
+  position: absolute;
+  right: 1px;
+
+}
+
+.gif_nu img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 250px;
+  height: 822px;
+  justify-content: flex-end;
+  border: 1px black;
+}
+
+.gif_nu1 {
+  position: absolute;
+  left: 1px;
+}
+
+.gif_nu1 img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 250px;
+  height: 822px;
+  justify-content: flex-end;
+  border: 1px black;
+}
+
+
+
+.cadeado {
+  height: 20px;
+  width: 30px;
+  vertical-align: middle;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+}
+
+
+form {
+  float: left;
+  font-size: large;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+table {
+  float: left;
+  font-size: large;
+}
+
+button {
+  height: 50px;
+  width: 250px;
+  border: 2px solid black;
+}
+
+.titulo {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+input {
+  font-size: large;
+  height: 30px;
+  border: 2px solid black;
+}
+
+#rent {
+  filter: blur(5px);
+}
+
+/* Estilos do rodapé */
+#rodape {
+  padding: 2px;
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+}
+
+#trodape {
+  font-size: larger;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans
+}
+
+#rod {
+  text-align: left;
+  margin-bottom: 50px;
+  color: black
+}
+
+.l1 {
+  color: rgba(137, 49, 196, 0.719);
+  font-weight: bold;
+}
+
+#f1 {
+  height: 200px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.smd {
+  margin-right: 5px;
+}
+
+#btinscrever {
+  margin-bottom: 10px;
+}
+
+.tabela3 {
+  overflow: auto;
+  height: 30%;
+  width: 90%;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 150px;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: rgba(137, 49, 196, 0.719);
+  border: solid black;
+  color: rgb(211, 211, 211);
+  flex: 1;
+  text-align: left;
+}
+
+.tabela4 {
+  overflow: auto;
+  height: 30%;
+  width: 90%;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 150px;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: rgba(137, 49, 196, 0.719);
+  border: solid black;
+  color: rgb(211, 211, 211);
+  text-align: left;
+  position: relative;
+  z-index: 0;
+}
+
+#log {
+  position: relative;
+  top: 40%;
+  left: 40%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#anuncio {
+  margin-bottom: 0px;
+}
+
+/* tentativa de deixar o site responsivo, depois de pronto para desktop */
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: block;
+    width: 80vw;
+    margin: 2em 2em;
+    margin-top: 23px;
+  }
+
+  .video-box {
+    display: block;
+    width: 100vw;
+  }
+
+  .videos {
+    display: block;
+    margin-top: 23px;
+  }
+
+  .videos-container {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  .social-media {
+    display: block;
+  }
+
+  .smd {
+    display: block;
+  }
+
+  body {
+    width: 100vw;
+  }
+
+  .submenu1 {
+    display: block;
+    width: 100vw;
+  }
+
+  .field2 {
+    display: block;
+    width: 100vw;
+  }
+
+}
+
+/* Inicio da customização para o projeto PI2 */
+
+.janela_modal{
+width: 100vw;
+height: 100vh;
+min-height: 2600px;
+position: relative;
+left: 0;
+background-color: rgba(137, 49, 196, 0.719);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 999  ;
+border-color: black;
+border: 3px ;
+
+
+}
+
+.modal{
+    width: 50%;
+    height: 100vh;
+    min-width: 450px;
+    min-height: 2400px;
+    background-color: gray;
+    padding: 50px;
+    
+    border-radius: 20px;
+    border: #141414;
+    border-color: black;
+
+} 
+
+input{
+  border-radius:20px;
+  min-width:350px;
+  text-align: center;
+}
+.selecao{
+  border-radius:20px;
+}
+
+.login{
+  border-radius:20px;
+  min-width:350px;
+  font-size: x-large;
+  background-color:rgba(170, 114, 207, 0.719);
+  color: aliceblue ;
+
+}
+
+
+#login{
+  border-radius:20px;
+  min-width:350px;
+  font-size: x-large;
+  background-color:rgba(170, 114, 207, 0.719);
+  color: aliceblue ;
+}
+#enviarlog{
+  border-radius:20px;
+  min-width:350px;
+  font-size: x-large;
+  background-color:rgba(170, 114, 207, 0.719);
+  color: aliceblue ;
+}
+
+#SAIR{
+  color: tomato;
+}
+
+.janela_modal1{
+  width: 100vw;
+  height: 70vh;
+  min-height: 150px;
+  position: relative;
+  left: 0;
+  background-color: rgba(137, 49, 196, 0.719);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999  ;
+  border-color: black;
+  border: 3px ;
+}
+
+a {
+  color: #000000; /* Define a cor do texto para azul (#007bff) */
+  text-decoration: none; /* Remove o sublinhado padrão */
+}
