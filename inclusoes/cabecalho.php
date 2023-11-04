@@ -37,7 +37,7 @@
 <body>
 <!-- botao para alterar o modo de exibição do site -->
   <div class="submenu1">
-    <div> <button id="modoescuro" style="border:solid black" onclick="alternarModo()">Modo Escuro</button></div>
+    <div> <button id="modoescuro" onclick="alternarModo()">Modo Escuro</button></div>
     <fieldset id="bemvindo">
       <h1> Bem vindo ao <span id="octos"> OCTOS </span> <br>
         Nossos braços alcançam seus objetivos!</h1>

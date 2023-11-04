@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css"> <!--link o arquivo css-->
+  <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"> <!-- fundo fumaça-->
+  <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
+  <a href="cad1.php"><img class="submenu2" id="cad" src="imagens/do-utilizador.png" width="80" height="80" style="border:solid black"></a>
+ 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
+  <script src="sub1.js"></script>
+
+   <script>
+    selic();
+   </script> 
+
+  <!-- função para alternar o modo do site -->
+  <script>
+    window.onload = function () {
+      var modoEscuro = localStorage.getItem("modoEscuro");
+      if (modoEscuro === "true") {
+        modoescuro();
+      } else {
+        modoclaro();
+      }
+      
+    };
+
+  </script>
+
+ 
+</head>
+
+ 
+
+
+<body>
+
+    <div class="submenu1">
+        <div> <button id="modoescuro" onclick="alternarModo()">Modo Escuro</button></div>
+        <fieldset id="bemvindo">
+            <h1> Bem vindo ao <span id="octos"> OCTOS </span> <br>
+                Nossos braços alcançam seus objetivos!</h1>
+        </fieldset>
+    </div>
+<!-- submenu de navegaççao entre as paginas do site -->
+    <fieldset class="field2" id="field2">
+        <table id="tab">
+            <td class="td1" id="td1" onmouseenter="onMouseEnter('td1')" onmouseleave="onMouseLeave('td1')"><a
+                    href="sub1.html">Calculadora Renda Fixa </a></td>
+            <td class="td2" id="td1" onmouseenter="onMouseEnter('td2')" onmouseleave="onMouseLeave('td2')"><a
+                    href="sub2.html">Parcelar</a></td>
+            <td class="td3" id="td1" onmouseenter="onMouseEnter('td3')" onmouseleave="onMouseLeave('td3')"><a
+                    href="sub3.html">Avista</a></td>
+            <td class="td4" id="td1" onmouseenter="onMouseEnter('td4')" onmouseleave="onMouseLeave('td4')"><a
+                    href="sub4.html">Projeto Tamar </a></td>
+            <td class="td5" id="td1" onmouseenter="onMouseEnter('td5')" onmouseleave="onMouseLeave('td5')"><a
+                    href="sub5.html">Fundos Imobiliarios </a><img class="cadeado" id="cadeado" src="imagens/cadeado.png"></td>
+            <td class="td6" id="td1" onmouseenter="onMouseEnter('td6')" onmouseleave="onMouseLeave('td6')"><a
+                    href="sub6.html">Area exclusiva </a><img class="cadeado" id="cadeado1" src="imagens/cadeado.png"></td>
+        </table>
+    </fieldset>
+<!-- apresentação do ideal do site, de onde saiu a ideia que criou o todo resumidamente! -->
+
+    <div class="titulo">
+        <h4>Você trabalha duro para ganhar seu dinheiro, e é natural querer que ele cresça e mantenha seu valor ao longo
+            do tempo. Infelizmente, a inflação pode corroer o poder de compra do seu dinheiro ao longo do tempo. É aí
+            que entra o CDI (Certificado de Depósito Interbancário).
+
+            Ao deixar seu dinheiro rendendo diariamente no CDI, você tem a oportunidade de obter um retorno que
+            acompanha de perto a taxa básica de juros da economia. Isso significa que seu dinheiro está se valorizando a
+            uma taxa próxima à inflação, protegendo-o da perda de poder de compra ao longo do tempo.
+<!-- inicio dos formulario e calculadora! -->
+        </h4>
+    </div>
+
+    <div id="formcdi">
+        <br>
+
+        <form>
+            <label for="selic"><br><br>Informe o valor da Selic a.a:</label><br>
+            <input type="number" name="selic" id="selic" placeholder="Ex: 13.65% a.a" required> <br><br>
+
+            <label for="investimento">Valor a ser investido : </label> <br>
+            <input type="number" name="valorinv" id="valorinv" placeholder="Ex: 1000.00" required> <br><br>
+
+            <label for="dias">Total de dias uteis investido:</label> <br>
+            <input type="number" name="dias" id="dias" placeholder="Ex:60" required> <br><br>
+
+            <button id="calcular" type="button" onclick=selic()> Calcular Dados </button> <br><br>
+            <button id="tabela" type="button" onclick=tabela()> Mostrar Tabela Mensal </button>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="tabela2">
+            <table>
+                <tr>
+                    <td>Dias</td>
+                    <td>Retorno do Investimento</td>
+                </tr>
+
+                <tr>
+                    <td>30</td>
+                    <td id="jan">-</td>
+                </tr>
+                <tr>
+                    <td>60</td>
+                    <td id="fev">-</td>
+                </tr>
+
+                <tr>
+                    <td>90</td>
+                    <td id="mar">-</td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td id="abr">-</td>
+                </tr>
+                <tr>
+                    <td>150</td>
+                    <td id="mai">-</td>
+                </tr>
+                <tr>
+                    <td>180</td>
+                    <td id="jun">-</td>
+                </tr>
+                <tr>
+                    <td>210</td>
+                    <td id="jul">-</td>
+                </tr>
+                <tr>
+                    <td>240</td>
+                    <td id="ago">-</td>
+                </tr>
+                <tr>
+                    <td>270</td>
+                    <td id="set">-</td>
+                </tr>
+                <tr>
+                    <td>300</td>
+                    <td id="out">-</td>
+                </tr>
+                <tr>
+                    <td>330</td>
+                    <td id="nov">-</td>
+                </tr>
+                <tr>
+                    <td>360</td>
+                    <td id="dez">-</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <p>Ao lado temos nosso <br> parceiro NUBANK <br> que recomendamos <br> para deixar o seu dinheiro <br> render
+            até a data <br> do vencimento!</p>
+
+        <a href="https://nubank.com.br/conta/"> <iframe class="parceiro" src="imagens/nubank.PNG" frameborder="3" width="650"
+                height="350"></iframe> </a>
+    </div>
+
+
+</body>
+<!-- rodape do site  -->
+<footer id="rodape">
+    <fieldset id="f1">
+        <legend>
+            <p id="trodape"> Para uma consultoria mais detalhada, entre em contato por nossos canais digitais.</p>
+        </legend>
+        <table id="roda">
+            <td style="vertical-align: middle; text-align: center;">
+                <div class="social-media">
+                    <div class="smd">
+                        <a href="https://wa.me/5551986102344?" text="Ola,%20Bem%20Vindo%20a%20Octos!"
+                            target="_blank"><img id="sm1" src="imagens/whatsapp.png" width="80" height="60"></a>
+                        <a href="https://t.me/+aIB0CcdetzQyOGVh" target="_blank"><img id="sm2" src="imagens/telegram.png"
+                                width="80" height="60"></a>
+                        <a href="https://discord.gg/H8tQSkTc" target="_blank"><img id="sm3" src="imagens/discordia.png"
+                                width="80" height="60"><br><br></a>
+                    </div>
+                    <a href="https://www.youtube.com/@rodrigomarins9970" target="_blank"><img id="btinscrever"
+                            src="imagens/bt inscrever.png" width="270" height="100"></a>
+                    <img class="fundo" id="anuncio" src="imagens/anunciof2.png" width="750" height="160">
+                    <img id="loc" src="imagens/horario2.png" width="220" height="110">
+                    <a href="https://goo.gl/maps/TK1t8Ne9votr7Vgd6" target="_blank"><img id="loc" src="imagens/localizacao.png"
+                            width="80" height="80"></a>
+                </div>
+            </td>
+
+        </table>
+
+        <p id="rod">
+
+            <br>E-mail: <a class="l1" href="mailto:octos@octos.com.br"> octos@octos.com.br </a>
+            <br>Rua Comendador Neto 2354
+            <br> Anchieta, São Paulo - Brasil.
+            <br>Cep 09834-000
+        </p>
+
+    </fieldset>
+</footer>
+
+</html>
