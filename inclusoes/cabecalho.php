@@ -17,7 +17,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
-  <script src="sub1.js"></script>
+  <script src="../sub1.js"></script>
 
   <!-- função para alternar o modo do site -->
   <script>
