@@ -12,7 +12,9 @@ foreach ($_SESSION as $chave => $valor) {
 */
 ?>
 
-<script src="validaform.js"></script>
+<script src="./js/validaform.js"></script>
+
+
 
 <div class="titulo">
     <h4>Recomendação de investimentos para <?php echo $_SESSION['nome']; ?></h4>
