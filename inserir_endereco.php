@@ -58,9 +58,18 @@ echo $id_estado;
 
 // preparando as consulta de insercao direta no sql
 
-$sql='insert into tb_pessoa (id_usuario,ds_endereco,nu_telefone,ds_bairro,id_cidade,nu_cep,id_estado
-values(:id_usuario,:ds_endereco,:nu_telefone,:ds_bairro,:id_cidade,:nu_cep,:id_esado)';
+$sql = 'INSERT INTO tb_pessoa (id_usuario, ds_endereco, nu_telefone, ds_bairro, id_cidade, nu_cep, id_estado)
+ VALUES (:id_usuario, :ds_endereco, :nu_telefone, :ds_bairro, :id_cidade, :nu_cep, :id_estado)';
 
+$stmt=$conn->prepare($sql);
+$stmt->bindParam(':id_usuario', $id_usuario);
+$stmt->bindParam(':ds_endereco', $endereco);
+$stmt->bindParam(':ds_bairro', $bairro);
+$stmt->bindParam(':nu_cep', $cep);
+$stmt->bindParam(':id_cidade', $id_cidade);
+$stmt->bindParam(':nu_telefone', $telefone);
+$stmt->bindParam(':id_estado', $id_estado);
+$stmt->execute();
 
 
 
@@ -77,7 +86,7 @@ values(:id_usuario,:ds_endereco,:nu_telefone,:ds_bairro,:id_cidade,:nu_cep,:id_e
 //inserir_endereco($cep, $bairro,$endereco,$numero,$cidade,$estado,$telefone);
 
 
- 
+header("location: carteira_recomendacao.php");
 
 
 ?>

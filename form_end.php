@@ -58,7 +58,7 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 
 </fieldset>
 
-<script type="text/javascript" src="cep.js"></script>
+<script type="text/javascript" src="./js/cep.js"></script>
 
 <?php
 include_once 'inclusoes/rodape.php'; // chama o arquivo do cabeçalho padrao
