@@ -152,10 +152,10 @@ function onMouseLeave(className) {
 
 function alternarModo() {
   var elemento = document.getElementsByTagName("body")[0];
-  var btnModoEscuro = document.getElementById("modoescuro");
-  var modoescuro = localStorage.getItem("modoescuro");
+  var btnModoEscuro = document.getElementById("btnModoEscuro");
+  var modoEscuro = localStorage.getItem("modoEscuro");
 
-  if (modoescuro === "true") {
+  if (modoEscuro === "true") {
     modoclaro();
     btnModoEscuro.innerHTML = "Modo Escuro";
   } else {
@@ -181,26 +181,26 @@ function modoescuro() {
   elementoRod.style.color = "#ffffff";
 
   var elemento = document.getElementById("sm1");
-  elemento.src = "imagens/whatsapp2.png";
+  elemento.src = "whatsapp2.png";
 
   var elemento = document.getElementById("sm2");
-  elemento.src = "imagens/telegram2.png";
+  elemento.src = "telegram2.png";
 
   var elemento = document.getElementById("sm3");
-  elemento.src = "imagens/discordia2.png";
+  elemento.src = "discordia2.png";
 
   var elemento = document.getElementById("cadeado");
-  elemento.src = "imagens/cadeado2.png";
+  elemento.src = "cadeado2.png";
 
   var elemento = document.getElementById("cadeado1");
-  elemento.src = "imagens/cadeado2.png";
+  elemento.src = "cadeado2.png";
 
   var elemento = document.getElementById("modoescuro");
   elemento.innerHTML = "Modo Claro";
 
 
   // Armazena a preferência do usuário no localStorage, para evitar ter que alterar a cada troca de sub-pagina.
-  localStorage.setItem("modoescuro", "true");
+  localStorage.setItem("modoEscuro", "true");
 
   // Chama a função alternarModo()
   alternarModo();
@@ -221,25 +221,25 @@ function modoclaro() {
   elementoRod.style.color = "";
 
   var elemento = document.getElementById("sm1");
-  elemento.src = "imagens/whatsapp.png";
+  elemento.src = "whatsapp.png";
 
   var elemento = document.getElementById("sm2");
-  elemento.src = "imagens/telegram.png";
+  elemento.src = "telegram.png";
 
   var elemento = document.getElementById("sm3");
-  elemento.src = "imagens/discordia.png";
+  elemento.src = "discordia.png";
 
   var elemento = document.getElementById("cadeado");
-  elemento.src = "imagens/cadeado.png";
+  elemento.src = "cadeado.png";
 
   var elemento = document.getElementById("cadeado1");
-  elemento.src = "imagens/cadeado.png";
+  elemento.src = "cadeado.png";
 
   var elemento = document.getElementById("modoescuro");
   elemento.innerHTML = "Modo Escuro";
 
   // Remove a preferência do usuário do localStorage, para evitar alternar a cada troca de sub-pagina.
-  localStorage.removeItem("modoescuro");
+  localStorage.removeItem("modoEscuro");
 
   // Chama a função alternarModo()
   alternarModo();

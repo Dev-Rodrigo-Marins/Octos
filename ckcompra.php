@@ -14,8 +14,6 @@ foreach ($_SESSION as $chave => $valor) {
 
 <script src="./js/validaform.js"></script>
 
-
-
 <div class="titulo">
     <h4>Recomendação de investimentos para <?php echo $_SESSION['nome']; ?></h4>
 </div>
@@ -48,11 +46,11 @@ foreach ($_SESSION as $chave => $valor) {
 
             foreach ($recomendacao as $item) {
                 echo '<label>
-                          <input type="checkbox" name="comprar[']" id="rec" value="' . $item['sg_acao'] . '"checked >
+                          <input type="checkbox" name="comprar" id="rec" value="' . $item['sg_acao'] . '"checked >
                           ' . $item['sg_acao'] .'R$'.$item['vl_acao'].'
                       </label>
-                      <input type="number" name="quantidade['.$c.']" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
-                      <input type="number" name="total['.$c.']" value="'.($a + (3*$b))*$item['vl_acao'].'">
+                      <input type="number" name="quantidade[]" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
+                      <input type="number" name="total[]" value="'.($a + (3*$b))*$item['vl_acao'].'">
                       <br>';
                 $b--;
                 $c++;

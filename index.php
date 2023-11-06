@@ -20,7 +20,7 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
     <div>
       <iframe src="imagens/landi.PNG" title="YouTube video player" frameborder="1"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen width="1200" height="500"></iframe>
+        allowfullscreen width="1100" height="450" style="text-align: center;" ></iframe>
     </div>
   </div>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,11 +9,13 @@
   <link rel="stylesheet" href="style.css"> <!--link o arquivo css-->
   <img class="fundo" src="imagens/fumaca-azul.png" width=100% height="60"> <!-- fundo fumaça-->
   <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
-  <div class="submenu2" id="cad" style="border:solid black" width="100" height="100" >
-  <a href="cad1.php">
-  <img src="imagens/do-utilizador.png" width="80" height="50" >
-  <span >Entrar</span></a>
-  </div>
+ 
+  <div class="submenu2" id="cad" style="border:solid black; width: 100px; height: 100px;">
+  <a href="cad1.php" style="display: block; width: 100%; height: 100%;">
+    <img src="imagens/do-utilizador.png" width="80" height="50">
+    <span>Entrar</span>
+  </a>
+</div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--adiciona a biblioteca Jquery-->
   <script src="../js/sub1.js"></script>
@@ -22,7 +23,7 @@
   <!-- função para alternar o modo do site -->
   <script>
     window.onload = function () {
-      var modoEscuro = localStorage.getItem("modoescuro");
+      var modoEscuro = localStorage.getItem("modoEscuro");
       if (modoEscuro === "true") {
         modoescuro();
       } else {
@@ -47,20 +48,19 @@
   <fieldset class="field2" id="field2">
     <table id="tab">
       <td class="td1" id="td1" onmouseenter="onMouseEnter('td1')" onmouseleave="onMouseLeave('td1')"><a
-          href="sub1.html">Calculadora Renda Fixa </a></td>
+          href="../html/sub1.html">Calculadora Renda Fixa </a></td>
       <td class="td2" id="td1" onmouseenter="onMouseEnter('td2')" onmouseleave="onMouseLeave('td2')"><a
-          href="sub2.html">Parcelar</a></td>
+          href="../html/sub2.html">Parcelar</a></td>
       <td class="td3" id="td1" onmouseenter="onMouseEnter('td3')" onmouseleave="onMouseLeave('td3')"><a
-          href="sub3.html">Avista</a></td>
+          href="../html/sub3.html">Avista</a></td>
       <td class="td4" id="td1" onmouseenter="onMouseEnter('td4')" onmouseleave="onMouseLeave('td4')"><a
-          href="sub4.html">Projeto Tamar </a></td>
+          href="../html/sub4.html">Projeto Tamar </a></td>
       <td class="td5" id="td1" onmouseenter="onMouseEnter('td5')" onmouseleave="onMouseLeave('td5')"><a
-          href="sub5.html">Fundos Imobiliarios </a><img class="cadeado" id="cadeado" src="imagens/cadeado.png"></td>
+          href="../html/sub5.html">Fundos Imobiliarios </a><img class="cadeado" id="cadeado" src="imagens/cadeado.png"></td>
       <td class="td6" id="td1" onmouseenter="onMouseEnter('td6')" onmouseleave="onMouseLeave('td6')"><a
-          href="sub6.html">Area exclusiva </a><img class="cadeado" id="cadeado1" src="imagens/cadeado.png"></td>
+          href="../html/sub6.html">Area exclusiva </a><img class="cadeado" id="cadeado1" src="imagens/cadeado.png"></td>
     </table>
   </fieldset>
-</body>
 
   <?php
     session_start();
@@ -85,17 +85,11 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 $_SESSION['nome'] = '';
 if ($result) {
   $_SESSION['nome'] = $result['nm_usuario'];
+  echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
 } else {
-    echo "Usuário não encontrado.";
+echo ' <br>Por gentileza faça o login! <br>
+<a href="login.php" id="SAIR"> Login </a>';
 }
-
-
-
-    if(isset($_SESSION['nome'])){
-    echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
-    } else {
-    echo '<a href="login.php" id="SAIR"> ENTRAR </a>';
-    }
     
 //bloco de codigo para descobrir o id_usuario;
 
@@ -111,7 +105,7 @@ if($result){
     $_SESSION['id_usuario'] = $result['id_usuario'];
 }
 else{
-    echo "id usuario nao encontrado!";
+    echo " ou<a href=\"cad1.php\" id=\"SAIR\"> Cadastre-se!</a>";
 }
 // fim do bloco;
 
@@ -128,14 +122,5 @@ $perfil = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($perfil) {
   $_SESSION['perfil'] = $perfil['ds_perfil']; // Corrigir 'perfil' para 'ds_perfil'
 }
-/* foreach para mostrar os valores salvos na sessao;
-echo '<br><br>';
-echo "ELEMENTOS DA SESSAO <br><br> ";
-
-
-foreach ($_SESSION as $chave => $valor) {
-    echo "$chave: $valor<br>";
-}
-*/
 
 ?>
