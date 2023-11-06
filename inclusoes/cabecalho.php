@@ -62,6 +62,19 @@
     </table>
   </fieldset>
 
+  <fieldset class="field2" id="field2">
+    <table id="tab">
+      <td class="td1" id="td1" onmouseenter="onMouseEnter('td1')" onmouseleave="onMouseLeave('td1')"><a
+          href="../quest.php">Analise de Risco </a></td>
+      <td class="td2" id="td1" onmouseenter="onMouseEnter('td2')" onmouseleave="onMouseLeave('td2')"><a
+          href="../cursos.php">Cursos</a></td>
+      <td class="td3" id="td1" onmouseenter="onMouseEnter('td3')" onmouseleave="onMouseLeave('td3')"><a
+          href="../ckcompra.php">Recomendacao</a></td>
+      <td class="td4" id="td1" onmouseenter="onMouseEnter('td4')" onmouseleave="onMouseLeave('td4')"><a
+          href="../form_end.php">Perfil Completo </a></td>
+    </table>
+  </fieldset>
+
   <?php
     session_start();
     require_once "banco.php";
