@@ -181,19 +181,19 @@ function modoescuro() {
   elementoRod.style.color = "#ffffff";
 
   var elemento = document.getElementById("sm1");
-  elemento.src = "whatsapp2.png";
+  elemento.src = "../imagens/whatsapp2.png";
 
   var elemento = document.getElementById("sm2");
-  elemento.src = "telegram2.png";
+  elemento.src = "../imagens/telegram2.png";
 
   var elemento = document.getElementById("sm3");
-  elemento.src = "discordia2.png";
+  elemento.src = "../imagens/discordia2.png";
 
   var elemento = document.getElementById("cadeado");
-  elemento.src = "cadeado2.png";
+  elemento.src = "../imagens/cadeado2.png";
 
   var elemento = document.getElementById("cadeado1");
-  elemento.src = "cadeado2.png";
+  elemento.src = "../imagens/cadeado2.png";
 
   var elemento = document.getElementById("modoescuro");
   elemento.innerHTML = "Modo Claro";
@@ -221,19 +221,19 @@ function modoclaro() {
   elementoRod.style.color = "";
 
   var elemento = document.getElementById("sm1");
-  elemento.src = "whatsapp.png";
+  elemento.src = "../imagens/whatsapp.png";
 
   var elemento = document.getElementById("sm2");
-  elemento.src = "telegram.png";
+  elemento.src = "../imagens/telegram.png";
 
   var elemento = document.getElementById("sm3");
-  elemento.src = "discordia.png";
+  elemento.src = "../imagens/discordia.png";
 
   var elemento = document.getElementById("cadeado");
-  elemento.src = "cadeado.png";
+  elemento.src = "../imagens/cadeado.png";
 
   var elemento = document.getElementById("cadeado1");
-  elemento.src = "cadeado.png";
+  elemento.src = "../imagens/cadeado.png";
 
   var elemento = document.getElementById("modoescuro");
   elemento.innerHTML = "Modo Escuro";

@@ -2,14 +2,7 @@
 
 require_once("./banco.php");
 include_once "./inclusoes/cabecalho.php";
-/*
-echo '<br><br>';
-echo "ELEMENTOS DA SESSAO <br><br> ";
 
-foreach ($_SESSION as $chave => $valor) {
-    echo "$chave: $valor<br>";
-}
-*/
 ?>
 
 <script src="./js/validaform.js"></script>
