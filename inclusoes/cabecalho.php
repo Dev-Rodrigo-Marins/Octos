@@ -11,7 +11,7 @@
   <a href="index.php"><img id="polvo" src="imagens/polvo2.png" width="40%" height="120"></a> <!-- polvo octos mascote-->
  
   <div class="submenu2" id="cad" style="border:solid black; width: 100px; height: 100px;">
-  <a href="cad1.php" style="display: block; width: 100%; height: 100%;">
+  <a href="../cad1.php" style="display: block; width: 100%; height: 100%;">
     <img src="imagens/do-utilizador.png" width="80" height="50">
     <span>Entrar</span>
   </a>
@@ -62,18 +62,7 @@
     </table>
   </fieldset>
 
-  <fieldset class="field2" id="field2">
-    <table id="tab">
-      <td class="td1" id="td1" onmouseenter="onMouseEnter('td1')" onmouseleave="onMouseLeave('td1')"><a
-          href="../quest.php">Analise de Risco </a></td>
-      <td class="td2" id="td1" onmouseenter="onMouseEnter('td2')" onmouseleave="onMouseLeave('td2')"><a
-          href="../cursos.php">Cursos</a></td>
-      <td class="td3" id="td1" onmouseenter="onMouseEnter('td3')" onmouseleave="onMouseLeave('td3')"><a
-          href="../ckcompra.php">Recomendacao</a></td>
-      <td class="td4" id="td1" onmouseenter="onMouseEnter('td4')" onmouseleave="onMouseLeave('td4')"><a
-          href="../form_end.php">Perfil Completo </a></td>
-    </table>
-  </fieldset>
+
 
   <?php
     session_start();
@@ -98,7 +87,21 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 $_SESSION['nome'] = '';
 if ($result) {
   $_SESSION['nome'] = $result['nm_usuario'];
-  echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
+  echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>
+
+  <fieldset class="field2" id="field2">
+    <table id="tab">
+      <td class="td7" id="td1" onmouseenter="onMouseEnter(\'td7\')" onmouseleave="onMouseLeave(\'td7\')"><a
+          href="../quest.php">Analise de Risco </a></td>
+      <td class="td8" id="td1" onmouseenter="onMouseEnter(\'td8\')" onmouseleave="onMouseLeave(\'td8\')"><a
+          href="../cursos.php">Cursos</a></td>
+      <td class="td9" id="td1" onmouseenter="onMouseEnter(\'td9\')" onmouseleave="onMouseLeave(\'td9\')"><a
+          href="../ckcompra.php">Recomendacao</a></td>
+      <td class="td10" id="td1" onmouseenter="onMouseEnter(\'td10\')" onmouseleave="onMouseLeave(\'td10\')"><a
+          href="../form_end.php">Perfil Completo </a></td>
+    </table>
+  </fieldset>';
+
 } else {
 echo ' <br>Por gentileza faça o login! <br>
 <a href="login.php" id="SAIR"> Login </a>';
