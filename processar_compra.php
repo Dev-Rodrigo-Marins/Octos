@@ -1,13 +1,11 @@
 <?php
-//var_dump($_POST);
-
 // Recupere os dados dos formulários e organize-os em um array associativo
 $compras = array();
-for ($i = 1; isset($_POST['comprar' . $i]); $i++) {
+foreach ($_POST['comprar'] as $key => $comprar) {
     $compras[] = array(
-        'comprar' => $_POST['comprar' . $i],
-        'quantidade' => $_POST['quantidade' . $i],
-        'total' => $_POST['total' . $i]
+        'comprar' => $comprar,
+        'quantidade' => $_POST['quantidade'][$key],
+        'total' => $_POST['total'][$key]
     );
 }
 
@@ -28,6 +26,4 @@ foreach ($compras as $compra) {
 }
 
 echo '</table>';
-
-
 ?>
