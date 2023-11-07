@@ -19,15 +19,6 @@ require_once('banco.php');
     $id_usuario = $_SESSION['id_usuario'];
 
 
-/* bloco de comandos utilizados para ver o que esta sendo enviado
-print_r($_SESSION);
-echo('<br><br>');
-foreach ($_REQUEST as $valor) {
-    
-    echo $valor . '<br>';
-}
-*/
-
 // preparando a consulta por id para a insercao nos campos id_cidade, id_estado
 
 $sql = 'select id_cidade from tb_cidade where nm_cidade = :cidade ';
@@ -56,10 +47,28 @@ echo '<br>';
 echo $id_estado;
 */
 
-// preparando as consulta de insercao direta no sql
+// fazer a validação do id_usuario se ja tiver ele na tabela tb_pessoa... o comando 
+
+$sql2 = 'select id_usuario from tb_pessoa where id_usuario = ?';
+$stmt2 = $conn -> prepare($sql2);
+$stmt2-> bindValue(1, $id_usuario);
+$stmt -> execute();
+$usuario_end= $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+if ($usuario_end >0 || $usuario_end ='') {
+
+$sql = 'UPDATE tb_pessoa set id_usuario = :id_usuario, ds_endereco = :ds_endereco, nu_telefone = :nu_telefone, ds_bairro = :ds_bairro,
+ id_cidade = :id_cidade, nu_cep = :nu_cep, id_estado =:id_estado where id_usuario = :id_usuario';
+
+}
+
+else{
 
 $sql = 'INSERT INTO tb_pessoa (id_usuario, ds_endereco, nu_telefone, ds_bairro, id_cidade, nu_cep, id_estado)
  VALUES (:id_usuario, :ds_endereco, :nu_telefone, :ds_bairro, :id_cidade, :nu_cep, :id_estado)';
+}
 
 $stmt=$conn->prepare($sql);
 $stmt->bindParam(':id_usuario', $id_usuario);
@@ -75,7 +84,7 @@ $stmt->execute();
 
 
 
-// fazer a validação do id_usuario se ja tiver ele na tabela tb_pessoa... o comando 
+
 // sql a ser realizado deve ser um update, com isso permitindo que um usuario tenha
 // apenas um endereco
 
