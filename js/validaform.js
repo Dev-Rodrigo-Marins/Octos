@@ -17,17 +17,18 @@ function vl_total(inputField) {
 
     totalField.value = "R$" + tot.toFixed(2);
 }
+function rem_recomendacao() {
+   var checkboxes = document.querySelectorAll('.comprar-checkbox');
 
-function rem_recomendacao(){
-    var ele = document.getElementsByName("comprar");
-    for(var i=0;i<ele.length;i++){
-       ele[i].checked = false;
-    }
-  }
+   checkboxes.forEach(function (checkbox) {
+       checkbox.checked = false;
+   });
+}
 
-  function add_recomendacao(){
-    var ele = document.getElementsByName("comprar");
-    for(var i=0;i<ele.length;i++){
-       ele[i].checked = true;
-    }
-  }
+function add_recomendacao() {
+   var checkboxes = document.querySelectorAll('.comprar-checkbox');
+
+   checkboxes.forEach(function (checkbox) {
+       checkbox.checked = true;
+   });
+}

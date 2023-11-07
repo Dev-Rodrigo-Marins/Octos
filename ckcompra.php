@@ -37,7 +37,7 @@ include_once "./inclusoes/cabecalho.php";
      echo '<legend> Recomendação FII '.$_SESSION['perfil'].' <br>';
         foreach ($recomendacao as $item) {
             echo '<label>
-                      <input type="checkbox" name="comprar[' . $c . ']" value="' . $item['sg_fii'] . '" checked>
+                      <input type="checkbox" class="comprar-checkbox" name="comprar[' . $c . ']" value="' . $item['sg_fii'] . '" checked>
                       ' . $item['sg_fii'] .' R$' . $item['vl_fii'] . '
                   </label>
                   <input type="number" name="quantidade[' . $c . ']" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
@@ -62,7 +62,7 @@ include_once "./inclusoes/cabecalho.php";
      echo '<legend> Recomendação Ações '.$_SESSION['perfil'].' <br>';
         foreach ($recomendacao as $item) {
             echo '<label>
-                      <input type="checkbox" name="comprar[' . $c . ']" value="' . $item['sg_acao'] . '" checked>
+                      <input type="checkbox" class="comprar-checkbox" name="comprar[' . $c . ']" value="' . $item['sg_acao'] . '" checked>
                       ' . $item['sg_acao'] .' R$' . $item['vl_acao'] . '
                   </label>
                   <input type="number" name="quantidade[' . $c . ']" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >
@@ -87,7 +87,7 @@ include_once "./inclusoes/cabecalho.php";
          echo '<legend> Recomendação Cripto '.$_SESSION['perfil'].' <br>';
         foreach ($recomendacao as $item) {
             echo '<label>
-                      <input type="checkbox" name="comprar[' . $c . ']" value="' . $item['sg_cripto'] . '" checked>
+                      <input type="checkbox" class="comprar-checkbox" name="comprar[' . $c . ']" value="' . $item['sg_cripto'] . '" checked>
                       ' . $item['sg_cripto'] .' R$' . $item['vl_cripto'] . '
                   </label>
                   <input type="number" name="quantidade[' . $c . ']" value="'.($a + (3*$b)).'" placeholder="Digite a quantidade" >

@@ -12,9 +12,9 @@ foreach ($_POST['comprar'] as $key => $comprar) {
 // Agora, você pode criar uma tabela para exibir as compras de forma organizada
 echo '<table border="1">
         <tr>
-            <th>Compra</th>
-            <th>Quantidade</th>
-            <th>Total</th>
+            <th>sg_ativo</th>
+            <th>quantidade</th>
+            <th>valor total</th>
         </tr>';
 
 foreach ($compras as $compra) {
