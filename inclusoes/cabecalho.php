@@ -68,6 +68,10 @@
     session_start();
     require_once "banco.php";
 // bloco de codigo para pegar o nome do usuario
+
+if(isset($email)){
+
+
 $email = $_SESSION['email'];
 
 $sql = 'SELECT nm_usuario FROM tb_login WHERE ds_email = :reserva';
@@ -83,9 +87,11 @@ $stmt->execute();
 
 // Obter o resultado como uma array associativa
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 
 $_SESSION['nome'] = '';
-if ($result) {
+if(isset($result)) {
   $_SESSION['nome'] = $result['nm_usuario'];
   echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>
 

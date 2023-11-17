@@ -1,6 +1,7 @@
 <?php
 
 include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
+
 ?>
 
 <!-- apresentação da ideia da pagina -->
@@ -47,13 +48,14 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 
     <label for="senha">Senha</label><br>
     <input type="password" name="senha" id="senha"> <br><br>
-
+    <a href="novasenha.php">Esqueceu a senha ? Clique</a>
 </select>
 </div>
 <br><br>
 
 <button class="login" id="enviarlog" name="Entrar" type="submit">Entrar</button>
 <br><br>
+
  
   <br><br>
   </span>
