@@ -79,6 +79,6 @@ $stmt = $conn -> prepare($sql3);
 $stmt ->bindParam(':id_usuario',$idUsuario);
 $stmt ->execute();
 
-header("Location: carteira_recomendacao.php");
+header("refresh:3;url=carteira_recomendacao.php");
 ?>
 
