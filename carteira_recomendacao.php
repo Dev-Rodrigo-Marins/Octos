@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 ?>
 
@@ -13,6 +13,7 @@ require_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
  
   
 echo"Ola ".$_SESSION['nome'];
+
 ?>
  <br >  Bem Vindo ao Painel do Investidor!</h4>
 

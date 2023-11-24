@@ -69,10 +69,11 @@
     require_once "banco.php";
 // bloco de codigo para pegar o nome do usuario
 
-if(isset($email)){
-
 
 $email = $_SESSION['email'];
+
+// bloco de codigo para pegar o nome do usuario
+if(isset($email)){
 
 $sql = 'SELECT nm_usuario FROM tb_login WHERE ds_email = :reserva';
 
@@ -90,23 +91,26 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 
-$_SESSION['nome'] = '';
+$_SESSION['nome'] = 'vazio';
+
 if(isset($result)) {
   $_SESSION['nome'] = $result['nm_usuario'];
-  echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>
-
+  echo'
   <fieldset class="field2" id="field2">
-    <table id="tab">
-      <td class="td7" id="td1" onmouseenter="onMouseEnter(\'td7\')" onmouseleave="onMouseLeave(\'td7\')"><a
-          href="../quest.php">Analise de Risco </a></td>
-      <td class="td8" id="td1" onmouseenter="onMouseEnter(\'td8\')" onmouseleave="onMouseLeave(\'td8\')"><a
-          href="../cursos.php">Cursos</a></td>
-      <td class="td9" id="td1" onmouseenter="onMouseEnter(\'td9\')" onmouseleave="onMouseLeave(\'td9\')"><a
-          href="../ckcompra.php">Recomendacao</a></td>
-      <td class="td10" id="td1" onmouseenter="onMouseEnter(\'td10\')" onmouseleave="onMouseLeave(\'td10\')"><a
-          href="../form_end.php">Perfil Completo </a></td>
-    </table>
+  <table id="tab">
+  <td class="td11" id="td1" onmouseenter="onMouseEnter(\'td11\')" onmouseleave="onMouseLeave(\'td10\')"><a
+  href="../carteira_recomendacao.php">Painel </a></td>
+  <td class="td7" id="td1" onmouseenter="onMouseEnter(\'td7\')" onmouseleave="onMouseLeave(\'td7\')"><a
+  href="../quest.php">Analise de Risco </a></td>
+  <td class="td8" id="td1" onmouseenter="onMouseEnter(\'td8\')" onmouseleave="onMouseLeave(\'td8\')"><a
+  href="../cursos.php">Cursos</a></td>
+  <td class="td9" id="td1" onmouseenter="onMouseEnter(\'td9\')" onmouseleave="onMouseLeave(\'td9\')"><a
+  href="../ckcompra.php">Recomendacao</a></td>
+  <td class="td10" id="td1" onmouseenter="onMouseEnter(\'td10\')" onmouseleave="onMouseLeave(\'td10\')"><a
+  href="../form_end.php">Perfil Completo </a></td>
+  </table>
   </fieldset>';
+  echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';
 
 } else {
 echo ' <br>Por gentileza faça o login! <br>

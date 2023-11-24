@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 ?>
 
@@ -75,13 +75,14 @@ include_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
      }
  }
  echo "<br> <br>";    
-echo'<button onclick="enviarRespostas()">Enviar</button>';
+echo'<button onclick="enviarRespostas()">Enviar</button>
+</fieldset>
+
+</form>';
 
 }
 ?>
-  </fieldset>
 
-</form>
 
 </div>
 
