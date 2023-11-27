@@ -20,7 +20,19 @@ function categoria(){
 	$sth->execute();
 	return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
+function questoes(){
+    global $conn; // busca fora do arquivo a variavel global com a conexao
+    $sth=$conn->prepare("select id_questao,ds_questao from tb_questionario");
+    $sth->execute();
+    return $sth->fetchAll();
+  }
 
+  function resposta(){
+    global $conn; // busca fora do arquivo a variavel global com a conexao
+    $sth=$conn->prepare("select id_questao,ds_resposta,vl_resposta from tb_resposta");
+    $sth->execute();
+    return $sth->fetchAll();
+  }
 
 
 ?> 

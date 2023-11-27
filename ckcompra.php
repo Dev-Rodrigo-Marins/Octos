@@ -4,23 +4,24 @@ require_once("./banco.php");
 include_once "./inclusoes/cabecalho.php";
 
 ?>
+<?php
+if ($_SESSION['email']) {
+    echo "
+    <script src=\"./js/validaform.js\"></script>
 
-<script src="./js/validaform.js"></script>
+    <div class=\"titulo\">
+        <h4>Recomendação de investimentos para"; ?> <?php echo $_SESSION['nome'] . "</h4>
+    </div>
 
-<div class="titulo">
-    <h4>Recomendação de investimentos para <?php echo $_SESSION['nome']; ?></h4>
-</div>
+    <div class=\"container\">
+        <button onclick=\"add_recomendacao()\">Usar Recomendações  </button>
+        <button onclick=\"rem_recomendacao()\">Remover Recomendações  </button>
+    </div>
 
-<div class="container">
-<button onclick="add_recomendacao()">Usar Recomendações  </button>
-<button onclick="rem_recomendacao()">Remover Recomendações  </button>
-
-</div>
-
-<div class='tabela3'>
-<form action="processar_compra.php" method="post">
-    <div class="lista-recomendacoes">
-        <h3>Recomendações de Compra:</h3>
+    <div class='tabela3'>
+        <form action=\"processar_compra.php\" method=\"post\">
+            <div class=\"lista-recomendacoes\">
+                <h3>Recomendações de Compra:</h3>"; ?>
 
 
     <?php
@@ -101,84 +102,84 @@ include_once "./inclusoes/cabecalho.php";
          ?>
     
 </div>
-
-    <div class="lista-ativos">
-        <h3>Ativos para Compra Geral:</h3>
-        <?php
-            // inicio do bloco dos FII
-
-            $sql = "SELECT sg_fii,vl_fii FROM tb_fii where ds_perfil !=?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $_SESSION['perfil']);
-            $stmt->execute();
-            $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+<div class="lista-ativos">
+    <h3>Ativos para Compra Geral:</h3>
+    <?php
+        // inicio do bloco dos FII
+        $sql = "SELECT sg_fii,vl_fii FROM tb_fii where ds_perfil !=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $_SESSION['perfil']);
+        $stmt->execute();
+        $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $a=0;    
+        $b=0;
+        echo 'Outros FII  <br>';
+        foreach ($ativos as $ativo) {
+            echo '<label>
+                    <input type="checkbox" name="comprar[' . $c . ']" value="' . $ativo['sg_fii'] . '">
+                    ' . $ativo['sg_fii'] . ' R$' . $ativo['vl_fii'] . '
+                </label>
+                <input type="number" name="quantidade[' . $c . ']" placeholder="Ativos fora do seu perfil de risco!" >
+                <input type="number" name="total[' . $c . ']" value="" step="0.01">
+                <br>';
+            $c++;
+        }
+        // fim do bloco dos FII
+        // inicio do bloco das ações
+        $sql = "SELECT sg_acao,vl_acao FROM tb_acao where ds_perfil !=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $_SESSION['perfil']);
+        $stmt->execute();
+        $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $a=0;    
+        $b=0;
+        
+        echo 'Outras Ações <br>';
+        foreach ($ativos as $ativo) {
+            echo '<label>
+                    <input type="checkbox" name="comprar[' . $c . ']" value="' . $ativo['sg_acao'] . '">
+                    ' . $ativo['sg_acao'] . ' R$' . $ativo['vl_acao'] . '
+                </label>
+                <input type="number" name="quantidade[' . $c . ']" placeholder="Ativos fora do seu perfil de risco!" >
+                <input type="number" name="total[' . $c . ']" value="" step="0.01">
+                <br>';
+            $c++;
+        }
+        // fim do bloco das demais ações 
+        // inicio do bloco das criptos
+        $sql = "SELECT sg_cripto,vl_cripto FROM tb_cripto where ds_perfil !=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $_SESSION['perfil']);
+        $stmt->execute();
+        $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $a=0;    
-            $b=0;
-            echo 'Outros FII  <br>';
-            foreach ($ativos as $ativo) {
-                echo '<label>
-                        <input type="checkbox" name="comprar[' . $c . ']" value="' . $ativo['sg_fii'] . '">
-                        ' . $ativo['sg_fii'] . ' R$' . $ativo['vl_fii'] . '
-                    </label>
-                    <input type="number" name="quantidade[' . $c . ']" placeholder="Ativos fora do seu perfil de risco!" >
-                    <input type="number" name="total[' . $c . ']" value="" step="0.01">
-                    <br>';
-                $c++;
-            }
-
-            // fim do bloco dos FII
-
-            // inicio do bloco das ações
-            $sql = "SELECT sg_acao,vl_acao FROM tb_acao where ds_perfil !=?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $_SESSION['perfil']);
-            $stmt->execute();
-            $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            $a=0;    
-            $b=0;
+        $b=0;
+        
+        echo 'Outras Criptos <br>';
+        foreach ($ativos as $ativo) {
+            echo '<label>
+                    <input type="checkbox" name="comprar[' . $c . ']" value="' . $ativo['sg_cripto'] . '">
+                    ' . $ativo['sg_cripto'] . ' R$' . $ativo['vl_cripto'] . '
+                </label>
+                <input type="number" name="quantidade[' . $c . ']" placeholder="Ativos fora do seu perfil de risco!" >
+                <input type="number" name="total[' . $c . ']" value="" step="0.01">
+                <br>';
+            $c++;
+        }
+        echo"
+        </div>
+        <br><br>
+        <input style=\"text-align: center;\" type=\"submit\" value=\"Confirmar Compras\">
+        </form>
+        </div>";
             
-            echo 'Outras Ações <br>';
-            foreach ($ativos as $ativo) {
-                echo '<label>
-                        <input type="checkbox" name="comprar[' . $c . ']" value="' . $ativo['sg_acao'] . '">
-                        ' . $ativo['sg_acao'] . ' R$' . $ativo['vl_acao'] . '
-                    </label>
-                    <input type="number" name="quantidade[' . $c . ']" placeholder="Ativos fora do seu perfil de risco!" >
-                    <input type="number" name="total[' . $c . ']" value="" step="0.01">
-                    <br>';
-                $c++;
-            }
-            // fim do bloco das demais ações 
-
-            // inicio do bloco das criptos
-            $sql = "SELECT sg_cripto,vl_cripto FROM tb_cripto where ds_perfil !=?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $_SESSION['perfil']);
-            $stmt->execute();
-            $ativos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                $a=0;    
-            $b=0;
+}
+else{
+    header('Location: index.php');
+}       
             
-            echo 'Outras Criptos <br>';
-            foreach ($ativos as $ativo) {
-                echo '<label>
-                        <input type="checkbox" name="comprar[' . $c . ']" value="' . $ativo['sg_cripto'] . '">
-                        ' . $ativo['sg_cripto'] . ' R$' . $ativo['vl_cripto'] . '
-                    </label>
-                    <input type="number" name="quantidade[' . $c . ']" placeholder="Ativos fora do seu perfil de risco!" >
-                    <input type="number" name="total[' . $c . ']" value="" step="0.01">
-                    <br>';
-                $c++;
-            }
-            // fim do bloco das demais criptos 
-             ?>
-    </div>
-     <br><br>
-    <input style="text-align: center;" type="submit" value="Confirmar Compras">
-</form>
-</div>
+?>
+
 <?php
 include_once 'inclusoes/rodape.php';
 ?>
