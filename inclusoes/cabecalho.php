@@ -108,6 +108,8 @@ if(isset($result)) {
   href="../ckcompra.php">Recomendacao</a></td>
   <td class="td10" id="td1" onmouseenter="onMouseEnter(\'td10\')" onmouseleave="onMouseLeave(\'td10\')"><a
   href="../form_end.php">Perfil Completo </a></td>
+  <td class="td12" id="td1" onmouseenter="onMouseEnter(\'td12\')" onmouseleave="onMouseLeave(\'td12\')"><a
+  href="../ativos.php">Ativos </a></td>
   </table>
   </fieldset>';
   echo "Olá " . $_SESSION['nome'] . '<a href="Sair.php" id="SAIR"> SAIR </a>';

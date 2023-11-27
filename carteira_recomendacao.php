@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 require_once 'inclusoes/cabecalho.php'; // chama o arquivo do cabeçalho padrao
 ?>
 <?php
@@ -24,7 +24,7 @@ echo"
     <a href=\"cursos.php\">* clique aqui para conhecer os nossos cursos de investimentos !</a> <br><br>
     <a href=\"ckcompra.php\">* clique aqui para ver a recomendacões de investimento para o seu perfil( necessario ter perfil de risco definido!) </a> <br><br>
     <a href=\"form_end.php\">* clique aqui para preencher o seu endereço completo... nao leva 2 min! </a> <br><br>
-    
+    <a href=\"ativos.php\">* clique aqui para ver seus ativos </a> <br><br>
     </span>
     </fieldset>
 

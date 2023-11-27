@@ -34,5 +34,4 @@ function questoes(){
     return $sth->fetchAll();
   }
 
-
 ?> 
