@@ -66,7 +66,7 @@ $stmt =$conn->prepare($sql);
 $stmt ->bindParam(':id_usuario',$idUsuario);
 $stmt ->execute();
 
-$sql2 = "insert into tb_recomendacao (id_usuario,ds_perfil) values (:id_usuario,'nao calculado')";
+$sql2 = "INSERT INTO tb_recomendacao (id_usuario,ds_perfil) VALUES (:id_usuario,'nao calculado')";
 $stmt = $conn->prepare($sql2);
 $stmt->bindParam(':id_usuario', $idUsuario);
 $stmt->execute();

@@ -20,6 +20,7 @@ if (isset($_SESSION['email'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $idUsuario = $row['id_usuario'];
 }
+var_dump($_POST);
 
 // Exemplo de valores para inserção
 $valores_insercao = array(

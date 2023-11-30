@@ -21,7 +21,10 @@ if ($_SESSION['email']) {
     <div class='tabela3'>
         <form action=\"processar_compra.php\" method=\"post\">
             <div class=\"lista-recomendacoes\">
-                <h3>Recomendações de Compra:</h3>"; ?>
+                <h3>Recomendações de Compra:</h3>";
+
+//var_dump($_SESSION);
+?>
 
 
     <?php

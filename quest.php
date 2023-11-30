@@ -36,7 +36,7 @@ if($_SESSION['email']){
   $stmt->execute();
   $quest = $stmt->fetch(PDO::FETCH_ASSOC);
   
-  if ($quest && $quest['total_resposta'] >= 0) {
+  if ($quest && $quest['total_resposta'] > 0) {
       echo 'Perfil de Risco já preenchido';
 
      echo'<br><br><button ><a href="quest_update.php"> Atualizar Perfil.</a></button>'; 
